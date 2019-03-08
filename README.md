@@ -125,6 +125,20 @@ Example output:
     area: 'Sweden' } ]
 ```
 
+### Scrobble timeline
+
+#### Fetch all scrobbles
+
+```bash
+$ yarn script:scrobble-timeline:1-fetch-scrobbles [--no-color]
+```
+
+Example output:
+
+```js
+// TBD
+```
+
 [license-image]: https://img.shields.io/github/license/music-stats/scripts.svg?style=flat-square
 [license-url]: https://github.com/music-stats/scripts/blob/master/LICENSE
 [code-size-image]: https://img.shields.io/github/languages/code-size/music-stats/scripts.svg?style=flat-square

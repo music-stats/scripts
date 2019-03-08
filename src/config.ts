@@ -7,7 +7,7 @@ const correctionsDir = path.resolve(rootDir, 'data/corrections/');
 const cacheDir = path.resolve(rootDir, 'cache/');
 const outputDir = path.resolve(rootDir, 'output/');
 const artistAreaMapScriptOutputDir = path.resolve(outputDir, 'artist-area-map/');
-// const scrobbleTimelineScriptOutputDir = path.resolve(outputDir, 'scrobble-timeline/');
+const scrobbleTimelineScriptOutputDir = path.resolve(outputDir, 'scrobble-timeline/');
 
 const config: Config = {
   userAgent: 'music-stats/0.0.0 (https://github.com/music-stats/scripts/)',
@@ -74,6 +74,12 @@ const config: Config = {
         },
 
         outputFilePath: path.resolve(artistAreaMapScriptOutputDir, '3-merged-artists.json'),
+      },
+    },
+
+    scrobbleTimeline: {
+      fetchScrobbles: {
+        outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '1-scrobbles.json'),
       },
     },
   },

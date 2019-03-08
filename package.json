@@ -13,7 +13,8 @@
     "build:watch": "tsc -w",
     "script:artist-area-map:1-fetch-artists": "./bin/artist-area-map/1-fetch-artists.sh",
     "script:artist-area-map:2-fetch-artists-areas": "./bin/artist-area-map/2-fetch-artists-areas.sh",
-    "script:artist-area-map:3-merge-artists": "./bin/artist-area-map/3-merge-artists.sh"
+    "script:artist-area-map:3-merge-artists": "./bin/artist-area-map/3-merge-artists.sh",
+    "script:scrobble-timeline:1-fetch-scrobbles": "./bin/scrobble-timeline/1-fetch-scrobbles.sh"
   },
   "devDependencies": {
     "@types/dotenv": "6.1.0",

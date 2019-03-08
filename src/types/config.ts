@@ -65,7 +65,8 @@ export default interface Config {
       mergeArtists: MergeArtistsScript;
     };
 
-    // scrobbleTimeline: {
-    // };
+    scrobbleTimeline: {
+      fetchScrobbles: Script;
+    };
   };
 }
