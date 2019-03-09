@@ -59,10 +59,20 @@ $ yarn build:watch  # compile with watch
 #### Fetch top artists for a given last.fm user
 
 ```bash
-$ yarn script:artist-area-map:1-fetch-artists [50] [--no-color] [--no-cache] # username is set in "./src/config.js"
+$ yarn script:artist-area-map:1-fetch-artists [50] [--no-color] [--no-cache]
+#                                              ^
+#                                              number of artists, default is set in the config
 ```
 
-Example output:
+##### Input prerequisites
+
+Username is set in `src/config.ts`.
+
+##### Example output
+
+Filename: `output/artist-area-map/1-lastfm-user-library.json`.
+
+Content:
 
 ```js
 [ { name: 'Dream Theater',
@@ -82,13 +92,24 @@ Example output:
 
 #### Fetch areas for a given set of artists
 
-Expects an output of `script:fetch-artists` to be located at `config.lastfm.outputFilePath`.
-
 ```bash
 $ yarn script:artist-area-map:2-fetch-artists-areas [10] [--no-color] [--no-cache]
+#                                                    ^
+#                                                    number of artists, default is set in the config
 ```
 
-Example output:
+##### Input prerequisites
+
+Expects an output of
+`script:artist-area-map:1-fetch-artists`
+to be located at
+`output/artist-area-map/1-lastfm-user-library.json`.
+
+##### Example output
+
+Filename: `output/artist-area-map/2-musicbrainz-artists-areas.json`.
+
+Content:
 
 ```js
 [ { artist: 'Dream Theater', area: 'New York' }, // New York will be mapped to United States, individual cities aren't supported
@@ -100,14 +121,20 @@ Example output:
 
 #### Merge results of two scripts above
 
-Expects both input files (`.json`) to be located at `output/`.
-Blends them together, applying three stages of corrections (see `data/corrections/`).
-
 ```bash
 $ yarn script:artist-area-map:3-merge-artists [--no-color]
 ```
 
-Example output:
+##### Input prerequisites
+
+Expects both input files (`.json`) to be located at `output/artist-area-map/`.
+Blends them together, applying three stages of corrections (see `data/corrections/`).
+
+##### Example output
+
+Filename: `output/artist-area-map/3-merged-artists.json`.
+
+Content:
 
 ```js
 [ { name: 'Dream Theater',
@@ -130,13 +157,45 @@ Example output:
 #### Fetch all scrobbles
 
 ```bash
-$ yarn script:scrobble-timeline:1-fetch-scrobbles [--no-color]
+$ yarn script:scrobble-timeline:1-fetch-scrobbles [2019-02-25] [--no-color] [--no-cache]
+#                                                  ^
+#                                                  date from (YYYY-MM-DD), defaults to yesterday
 ```
 
-Example output:
+##### Input prerequisites
+
+None.
+
+##### Example output
 
 ```js
-// TBD
+[ { date: '2019-02-26 18:13',
+    track: {
+      name: 'Re-Align',
+      playcount: 6,
+      mbid: '0a2da65c-dcff-3837-beb7-0dc1697870ee' },
+    album: {
+      name: 'Good Times, Bad Times - Ten Years of Godsmack',
+      playcount: 28,
+      mbid: 'a54420cf-e577-4607-976e-2d5eee07daa7' },
+    artist: {
+      name: 'Godsmack',
+      playcount: 205,
+      mbid: 'ac2d1c91-3667-46aa-9fe7-170ca7fce9e2' } },
+  ...
+  { date: '2019-02-25 08:38',
+    track: {
+      name: 'Handle This',
+      playcount: 2,
+      mbid: '1974be37-81b4-3d2c-aed3-1a7c51847513' },
+    album: {
+      name: 'All Killer, No Filler',
+      playcount: 33,
+      mbid: null },
+    artist: {
+      name: 'Sum 41',
+      playcount: 33,
+      mbid: 'f2eef649-a6d5-4114-afba-e50ab26254d2' } ]
 ```
 
 [license-image]: https://img.shields.io/github/license/music-stats/scripts.svg?style=flat-square
