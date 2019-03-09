@@ -42,16 +42,16 @@
 // }
 
 import config from 'src/config';
-import {isDateArgValid, dateToString, getYesterdayDate} from 'src/utils/date';
+import {isDateStringValid, dateToString, getYesterdayDateString} from 'src/utils/date';
 
 const argv = process.argv.slice(2);
 
-if (argv[0] && !isDateArgValid(argv[0])) {
+if (argv[0] && !isDateStringValid(argv[0])) {
   console.error('The "from" argument must have the "YYYY-MM-DD" format.')
   process.exit(1);
 }
 
-const from = argv[0] && dateToString(new Date(argv[0])) || getYesterdayDate();
+const from = argv[0] && dateToString(new Date(argv[0])) || getYesterdayDateString();
 const toBypassCache = argv.includes('--no-cache');
 
 console.table([

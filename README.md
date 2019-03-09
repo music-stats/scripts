@@ -48,6 +48,8 @@ Create a `.env` file and fill its values according to [`.env.template`](.env.tem
 
 ```bash
 $ yarn install      # install deps
+$ yarn lint         # lint scripts
+$ yarn test         # run unit tests
 $ yarn build        # compile TypeScript
 $ yarn build:watch  # compile with watch
 ```

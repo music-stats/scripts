@@ -1,8 +1,8 @@
-export function isDateArgValid(value: string): boolean {
-  return Boolean(new Date(value).getTime());
+export function isDateStringValid(value: string): boolean {
+  return Boolean(Date.parse(value));
 }
 
-export function getYesterdayDate(): string {
+export function getYesterdayDateString(): string {
   const date = new Date();
   const msInOneDay = 24 * 60 * 60 * 1000;
 
