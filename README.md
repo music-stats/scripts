@@ -3,12 +3,13 @@
   [![license][license-image]][license-url]
   ![code size][code-size-image]
 
-SHOULD become an API gateway between the front-end and various data providers, currently a set of scripts.
+SHOULD become an API gateway between different front-ends and various data providers, currently a set of scripts.
 
 ## Tech stack
 
 dev deps:
-[`typescript`](https://www.typescriptlang.org/docs).
+[`typescript`](https://www.typescriptlang.org/docs),
+[`jest`](https://jestjs.io/docs/en/expect).
 
 deps:
 [`node`](https://nodejs.org/dist/latest/docs/api) (at least v10, since experimental [`fs.promises` API](https://nodejs.org/dist/latest/docs/api/fs.html#fs_fs_promises_api) is used),
@@ -159,8 +160,10 @@ Content:
 #### Fetch all scrobbles
 
 ```bash
-$ yarn script:scrobble-timeline:1-fetch-scrobbles [2019-02-25] [--no-color] [--no-cache]
-#                                                  ^
+$ yarn script:scrobble-timeline:1-fetch-scrobbles [2019-02-25] [2019-03-10] [--no-color] [--no-cache]
+#                                                  ^            ^
+#                                                  |            date to (YYYY-MM-DD), defaults to today
+#                                                  |
 #                                                  date from (YYYY-MM-DD), defaults to yesterday
 ```
 
@@ -170,8 +173,12 @@ None.
 
 ##### Example output
 
+Filename: `output/scrobble-timeline/1-scrobbles/2019-02-25-2019-03-10.json`.
+
+Content:
+
 ```js
-[ { date: '2019-02-26 18:13',
+[ { date: '2019-03-10 18:13',
     track: {
       name: 'Re-Align',
       playcount: 6,

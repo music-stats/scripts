@@ -1,7 +1,7 @@
 {
   "name": "music-stats-scripts",
-  "version": "1.0.0",
-  "description": "SHOULD become an API gateway between the front-end and various data providers, currently a set of scripts",
+  "version": "0.0.1",
+  "description": "SHOULD become an API gateway between different front-ends and various data providers, currently a set of scripts",
   "author": "Oleksii Markhovskyi",
   "license": "MIT",
   "scripts": {

@@ -1,4 +1,10 @@
-import {isDateStringValid, getYesterdayDateString, dateToString} from '../date';
+import {
+  isDateStringValid,
+  compareDates,
+  getTodayDateString,
+  getYesterdayDateString,
+  dateToString,
+} from '../date';
 
 describe('date utils', () => {
   // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
@@ -18,30 +24,57 @@ describe('date utils', () => {
     });
   });
 
-  describe('getYesterdayDateString()', () => {
-    let dateNowMock: jest.SpyInstance = null;
+  describe('compareDates', () => {
+    test('returns number of milliseconds between two dates', () => {
+      expect(compareDates('2005-06-14', '2008-06-14')).toBe(-94694400000);
+      expect(compareDates('2008-02-18', '2008-02-18')).toBe(0);
+      expect(compareDates('2012-10-28', '2011-01-05')).toBe(57196800000);
+    });
+  });
+
+  describe('methods dealing with current date', () => {
+    const RealDate = global.Date;
 
     function setToday(dateString: string) {
-      dateNowMock.mockImplementation(() => new Date(dateString).getTime());
+      (global.Date as any) = class extends RealDate {
+        public static now() {
+          return new Date(dateString).getTime();
+        }
+
+        constructor() {
+          super(dateString);
+        }
+      }
     }
 
-    beforeEach(() => {
-      dateNowMock = jest.spyOn(Date, 'now');
-    });
-
     afterEach(() => {
-      jest.restoreAllMocks();
+      global.Date = RealDate;
     });
 
-    test('shifts current (mocked) date by one day back', () => {
-      setToday('2019-03-09');
-      expect(getYesterdayDateString()).toBe('2019-03-08');
+    describe('getTodayDateString()', () => {
+      test('converts current (mocked) date to string', () => {
+        setToday('2019-03-09');
+        expect(getTodayDateString()).toBe('2019-03-09');
 
-      setToday('2007-02-01');
-      expect(getYesterdayDateString()).toBe('2007-01-31');
+        setToday('2007-02-01');
+        expect(getTodayDateString()).toBe('2007-02-01');
 
-      setToday('2000-01-01');
-      expect(getYesterdayDateString()).toBe('1999-12-31');
+        setToday('2000-01-01');
+        expect(getTodayDateString()).toBe('2000-01-01');
+      });
+    });
+
+    describe('getYesterdayDateString()', () => {
+      test('shifts current (mocked) date by one day back', () => {
+        setToday('2019-03-09');
+        expect(getYesterdayDateString()).toBe('2019-03-08');
+
+        setToday('2007-02-01');
+        expect(getYesterdayDateString()).toBe('2007-01-31');
+
+        setToday('2000-01-01');
+        expect(getYesterdayDateString()).toBe('1999-12-31');
+      });
     });
   });
 
