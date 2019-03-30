@@ -48,11 +48,11 @@ Create a `.env` file and fill its values according to [`.env.template`](.env.tem
 ### Commands
 
 ```bash
-$ yarn install      # install deps
-$ yarn lint         # lint scripts
-$ yarn test         # run unit tests
-$ yarn build        # compile TypeScript
-$ yarn build:watch  # compile with watch
+$ npm i                # install deps
+$ npm run lint         # lint scripts
+$ npm test             # run unit tests
+$ npm run build        # compile TypeScript
+$ npm run build:watch  # compile with watch
 ```
 
 ## Scripts
@@ -62,9 +62,9 @@ $ yarn build:watch  # compile with watch
 #### Fetch top artists for a given last.fm user
 
 ```bash
-$ yarn script:artist-area-map:1-fetch-artists [50] [--no-color] [--no-cache]
-#                                              ^
-#                                              number of artists, default is set in the config
+$ npm run script:artist-area-map:1-fetch-artists [50] [--no-color] [--no-cache]
+#                                                 ^
+#                                                 number of artists, default is set in the config
 ```
 
 ##### Input prerequisites
@@ -96,9 +96,9 @@ Content:
 #### Fetch areas for a given set of artists
 
 ```bash
-$ yarn script:artist-area-map:2-fetch-artists-areas [10] [--no-color] [--no-cache]
-#                                                    ^
-#                                                    number of artists, default is set in the config
+$ npm run script:artist-area-map:2-fetch-artists-areas [10] [--no-color] [--no-cache]
+#                                                       ^
+#                                                       number of artists, default is set in the config
 ```
 
 ##### Input prerequisites
@@ -125,7 +125,7 @@ Content:
 #### Merge results of two scripts above
 
 ```bash
-$ yarn script:artist-area-map:3-merge-artists [--no-color]
+$ npm run script:artist-area-map:3-merge-artists [--no-color]
 ```
 
 ##### Input prerequisites
@@ -160,11 +160,11 @@ Content:
 #### Fetch all scrobbles
 
 ```bash
-$ yarn script:scrobble-timeline:1-fetch-scrobbles [2019-02-25] [2019-03-10] [--no-color] [--no-cache]
-#                                                  ^            ^
-#                                                  |            date to (YYYY-MM-DD), defaults to today
-#                                                  |
-#                                                  date from (YYYY-MM-DD), defaults to yesterday
+$ npm run script:scrobble-timeline:1-fetch-scrobbles [2019-02-25] [2019-03-10] [--no-color] [--no-cache]
+#                                                     ^            ^
+#                                                     |            date to (YYYY-MM-DD), defaults to today
+#                                                     |
+#                                                     date from (YYYY-MM-DD), defaults to yesterday
 ```
 
 ##### Input prerequisites

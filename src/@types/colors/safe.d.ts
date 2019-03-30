@@ -1,4 +1,4 @@
-// using this file instead of "yarn add @types/colors" because of the following error:
+// using this file instead of "npm i --save-dev @types/colors" because of the following error:
 //
 // "node_modules/@types/colors/index.d.ts(118,9): error TS2717:
 //  Subsequent property declarations must have the same type.
