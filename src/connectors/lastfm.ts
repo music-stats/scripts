@@ -3,7 +3,12 @@ import {times, take} from 'ramda';
 import axios, {AxiosResponse} from 'axios';
 import * as dotenv from 'dotenv';
 
-import {LibraryResponseData, Artist} from 'src/types/lastfm';
+import {
+  LibraryResponseData,
+  // RecentTracksResponseData,
+  Artist,
+  RecentTrack,
+} from 'src/types/lastfm';
 
 import config from 'src/config';
 import {sequence} from 'src/utils/promise';
@@ -13,6 +18,7 @@ import {retrieveResponseDataCache, storeResponseDataCache} from 'src/utils/cache
 const {parsed: {LASTFM_API_KEY}} = dotenv.config();
 
 type LibraryResponse = AxiosResponse<LibraryResponseData>;
+// type RecentTracksResponse = AxiosResponse<RecentTracksResponseData>;
 
 export function buildApiUrl(method: string, params = {}): string {
   const defaultParams = {
@@ -106,4 +112,24 @@ export function fetchLibraryArtists(
   return sequence(fetchAllPages)
     .then(concatPages)
     .then(cutExtraArtists);
+}
+
+export function fetchRecentTracks(
+  username: string,
+  from: string,
+  to: string,
+  toBypassCache: boolean,
+): Promise<RecentTrack[]> {
+  // http://ws.audioscrobbler.com/2.0/?
+  //   method=user.getrecenttracks&
+  //   api_key=33650ee56ab71aee770161885f83054c&
+  //   format=json&
+  //   user=markhovskiy&
+  //   from=1263737600&
+  //   to=1283636200&
+  //   limit=200&
+  //   page=4
+
+  console.log(username, from, to, toBypassCache);
+  return Promise.resolve([]);
 }

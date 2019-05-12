@@ -1,47 +1,9 @@
-// https://www.last.fm/api/show/user.getRecentTracks
-
-// http://ws.audioscrobbler.com/2.0/?
-//   method=user.getrecenttracks&
-//   api_key=33650ee56ab71aee770161885f83054c&
-//   format=json&
-//   user=markhovskiy&
-//   from=1263737600&
-//   limit=200&
-//   page=4
-
-// {
-//   "recenttracks": {
-//     "@attr": {
-//       "page": "4",
-//       "perPage": "200",
-//       "user": "markhovskiy",
-//       "total": "48347",
-//       "totalPages": "242"
-//     },
-//     "track": [
-//       {
-//         "name": "Re-Align",
-//         "mbid": "0a2da65c-dcff-3837-beb7-0dc1697870ee",
-//         "date": {
-//           "uts": "1551204811",
-//           "#text": "26 Feb 2019, 18:13"
-//         },
-//         "album": {
-//           "mbid": "a54420cf-e577-4607-976e-2d5eee07daa7",
-//           "#text": "Good Times, Bad Times - Ten Years of Godsmack"
-//         },
-//         "artist": {
-//           "mbid": "ac2d1c91-3667-46aa-9fe7-170ca7fce9e2",
-//           "#text": "Godsmack"
-//         },
-//         ...
-//       },
-//       ...
-//     ]
-//   }
-// }
+import {Scrobble} from 'src/types/scrobble';
+import {RecentTrack as LastfmRecentTrack} from 'src/types/lastfm';
 
 import config from 'src/config';
+import {writeFile} from 'src/utils/file';
+import log, {proxyLogLength} from 'src/utils/log';
 import {
   isDateStringValid,
   compareDates,
@@ -49,16 +11,17 @@ import {
   getTodayDateString,
   getYesterdayDateString,
 } from 'src/utils/date';
+import {fetchRecentTracks} from 'src/connectors/lastfm';
 
 const argv = process.argv.slice(2);
 
 if (argv[0] && !isFlagArg(argv[0]) && !isDateStringValid(argv[0])) {
-  console.error('The "from" argument must have the "YYYY-MM-DD" format.')
+  console.error(`The "from" argument must have the "YYYY-MM-DD" format. Received "${argv[0]}".`)
   process.exit(1);
 }
 
 if (argv[1] && !isFlagArg(argv[1]) && !isDateStringValid(argv[1])) {
-  console.error('The "to" argument must have the "YYYY-MM-DD" format.')
+  console.error(`The "to" argument must have the "YYYY-MM-DD" format. Received "${argv[1]}".`)
   process.exit(1);
 }
 
@@ -71,26 +34,62 @@ if (compareDates(from, to) > 0) {
   process.exit(1);
 }
 
-console.table([
-  {
-    name: 'username',
-    value: config.connectors.lastfm.username,
-  },
-  {
-    name: 'from',
-    value: from,
-  },
-  {
-    name: 'to',
-    value: to,
-  },
-  {
-    name: 'toBypassCache',
-    value: toBypassCache,
-  },
-]);
-
 function isFlagArg(value: string): boolean {
   // e.g. "--no-color", "--no-cache"
   return value.startsWith('--');
 }
+
+function extract(): Promise<LastfmRecentTrack[]> {
+  log(`fetching "${from} - ${to}" recent tracks from last.fm...`);
+
+  return fetchRecentTracks(
+    config.connectors.lastfm.username,
+    from,
+    to,
+    toBypassCache,
+  );
+}
+
+function transform(rawRecentTrackList: LastfmRecentTrack[]): Scrobble[] {
+  // todo: apply corrections before aggregating playcount sums
+  return aggregatePlaycounts(rawRecentTrackList.map(convert));
+}
+
+function aggregatePlaycounts(scrobbleList: Scrobble[]): Scrobble[] {
+  // todo: collect sums of "playcount" property for tracks, albums and artists
+  return scrobbleList;
+}
+
+function convert({name, mbid, date, album, artist}: LastfmRecentTrack): Scrobble {
+  return {
+    date: date['#text'],
+    track: {
+      name,
+      playcount: null,
+      mbid,
+    },
+    album: {
+      name: album['#text'],
+      playcount: null,
+      mbid: album.mbid,
+    },
+    artist: {
+      name: artist['#text'],
+      playcount: null,
+      mbid: artist.mbid,
+    },
+  };
+}
+
+function load(scrobbleList: Scrobble[]): Promise<Scrobble[]> {
+  return writeFile(
+    config.scripts.scrobbleTimeline.fetchScrobbles.outputFilePath,
+    scrobbleList,
+  );
+}
+
+extract()
+  .then(transform)
+  .then(load)
+  .then(proxyLogLength)
+  .catch(console.error);
