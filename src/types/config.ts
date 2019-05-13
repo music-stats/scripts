@@ -20,6 +20,11 @@ interface Lastfm extends Connector {
     perPage: number;
     countDefault: number;
   };
+
+  recentTracks: {
+    maxPageNumber: number;
+    perPage: number;
+  };
 }
 
 interface Musicbrainz extends Connector {

@@ -19,9 +19,13 @@ const config: Config = {
       },
       username: 'markhovskiy',
       artists: {
-        maxPageNumber: 40, // @see: https://www.last.fm/api/tos
-        perPage: 50,
+        maxPageNumber: 10, // @see: https://www.last.fm/api/tos
+        perPage: 200,
         countDefault: 50,
+      },
+      recentTracks: {
+        maxPageNumber: 100,
+        perPage: 200,
       },
       cache: {
         ttl: 60 * 60 * 1000,
@@ -79,7 +83,7 @@ const config: Config = {
 
     scrobbleTimeline: {
       fetchScrobbles: {
-        outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '1-scrobbles/', '<from>-<to>.json'),
+        outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '1-scrobbles/', '<from>--<to>.json'),
       },
     },
   },

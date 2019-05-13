@@ -51,12 +51,12 @@ function extract(): Promise<LastfmRecentTrack[]> {
 }
 
 function transform(rawRecentTrackList: LastfmRecentTrack[]): Scrobble[] {
-  // todo: apply corrections before aggregating playcount sums
+  // @todo: apply corrections before aggregating playcount sums
   return aggregatePlaycounts(rawRecentTrackList.map(convert));
 }
 
 function aggregatePlaycounts(scrobbleList: Scrobble[]): Scrobble[] {
-  // todo: collect sums of "playcount" property for tracks, albums and artists
+  // @todo: collect sums of "playcount" property for tracks, albums and artists
   return scrobbleList;
 }
 
@@ -82,10 +82,14 @@ function convert({name, mbid, date, album, artist}: LastfmRecentTrack): Scrobble
 }
 
 function load(scrobbleList: Scrobble[]): Promise<Scrobble[]> {
-  return writeFile(
-    config.scripts.scrobbleTimeline.fetchScrobbles.outputFilePath,
-    scrobbleList,
+  const outputFilePath = config.scripts.scrobbleTimeline.fetchScrobbles.outputFilePath.replace(
+    '<from>--<to>',
+    `${from}--${to}`,
   );
+
+  log(`writing to "${outputFilePath}"`);
+
+  return writeFile(outputFilePath, scrobbleList);
 }
 
 extract()

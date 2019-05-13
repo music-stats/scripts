@@ -53,10 +53,11 @@ function convert({name, area}: MusicbrainzArtist): ArtistArea {
 }
 
 function load(artistAreaList: ArtistArea[]): Promise<ArtistArea[]> {
-  return writeFile(
-    config.scripts.artistAreaMap.fetchArtistsAreas.outputFilePath,
-    artistAreaList,
-  );
+  const {outputFilePath} = config.scripts.artistAreaMap.fetchArtistsAreas;
+
+  log(`writing to "${outputFilePath}"`);
+
+  return writeFile(outputFilePath, artistAreaList);
 }
 
 extract()

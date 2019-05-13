@@ -43,6 +43,7 @@ function fetchPage(
     'library.getartists',
     {
       user: username,
+      limit: config.connectors.lastfm.artists.perPage,
       page: pageNumber + 1, // bounds: 1-1000000
     },
   );

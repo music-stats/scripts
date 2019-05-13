@@ -37,10 +37,11 @@ function convert({name, playcount, mbid}: LastfmArtist): Artist {
 }
 
 function load(artistList: Artist[]): Promise<Artist[]> {
-  return writeFile(
-    config.scripts.artistAreaMap.fetchArtist.outputFilePath,
-    artistList,
-  );
+  const {outputFilePath} = config.scripts.artistAreaMap.fetchArtist;
+
+  log(`writing to "${outputFilePath}"`);
+
+  return writeFile(outputFilePath, artistList);
 }
 
 extract()

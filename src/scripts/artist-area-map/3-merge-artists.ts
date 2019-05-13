@@ -2,7 +2,7 @@ import {Artist, ArtistArea, MergedArtist} from 'src/types/artist';
 
 import config from 'src/config';
 import {readJsonFile, writeFile} from 'src/utils/file';
-import {proxyLogLength} from 'src/utils/log';
+import log, {proxyLogLength} from 'src/utils/log';
 import {loadAllCorrections, merge} from 'src/utils/merge';
 
 interface InputLists {
@@ -27,10 +27,11 @@ function transform({artistList, artistAreaList}: InputLists): Promise<MergedArti
 }
 
 function load(mergedArtistList: MergedArtist[]): Promise<MergedArtist[]> {
-  return writeFile(
-    config.scripts.artistAreaMap.mergeArtists.outputFilePath,
-    mergedArtistList,
-  );
+  const {outputFilePath} = config.scripts.artistAreaMap.mergeArtists;
+
+  log(`writing to "${outputFilePath}"`);
+
+  return writeFile(outputFilePath, mergedArtistList);
 }
 
 extract()
