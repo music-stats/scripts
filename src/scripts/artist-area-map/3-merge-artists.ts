@@ -29,6 +29,7 @@ function transform({artistList, artistAreaList}: InputLists): Promise<MergedArti
 function load(mergedArtistList: MergedArtist[]): Promise<MergedArtist[]> {
   const {outputFilePath} = config.scripts.artistAreaMap.mergeArtists;
 
+  log();
   log(`writing to "${outputFilePath}"`);
 
   return writeFile(outputFilePath, mergedArtistList);

@@ -4,6 +4,7 @@ Glasgow
 Lancaster
 Leeds
 London
+Manchester
 Millbrook
 Oxford
 Scotland
