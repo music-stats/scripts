@@ -1,5 +1,6 @@
 Allentown
 Austin
+Baltimore
 Bel Air
 Berkeley
 Boise
@@ -18,10 +19,12 @@ Lawrence
 Lexington
 Los Angeles
 Louisiana
+Maryland
 Minneapolis
 Nashville
 New York
 Newbern
+North Carolina
 Oakland
 Raleigh
 San Antonio

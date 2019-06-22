@@ -3,4 +3,5 @@ Berlin
 Furtwangen im Schwarzwald
 Hamburg
 Saarbrücken
+Stuttgart
 Weimar
