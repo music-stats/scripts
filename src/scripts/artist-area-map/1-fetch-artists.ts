@@ -4,7 +4,7 @@ import {Artist} from 'src/types/artist';
 import config from 'src/config';
 import {writeFile} from 'src/utils/file';
 import log, {proxyLogLength} from 'src/utils/log';
-import {fetchLibraryArtists} from 'src/connectors/lastfm';
+import {fetchLibraryArtists} from 'src/ETL/extractors/lastfm';
 
 const argv = process.argv.slice(2);
 const artistsCount = parseInt(argv[0], 10) || config.connectors.lastfm.artists.countDefault;

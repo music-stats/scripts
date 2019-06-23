@@ -8,7 +8,7 @@ import config from 'src/config';
 import {sequence} from 'src/utils/promise';
 import {readJsonFile, writeFile} from 'src/utils/file';
 import log, {proxyLogLength} from 'src/utils/log';
-import {fetchArtist} from 'src/connectors/musicbrainz';
+import {fetchArtist} from 'src/ETL/extractors/musicbrainz';
 
 const argv = process.argv.slice(2);
 const artistsCount = parseInt(argv[0], 10) || config.connectors.musicbrainz.artists.countDefault;

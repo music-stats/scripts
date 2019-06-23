@@ -3,7 +3,8 @@ import {Artist, ArtistArea, MergedArtist} from 'src/types/artist';
 import config from 'src/config';
 import {readJsonFile, writeFile} from 'src/utils/file';
 import log, {proxyLogLength} from 'src/utils/log';
-import {loadAllCorrections, merge} from 'src/utils/merge';
+import {loadAllCorrections} from 'src/ETL/extractors/correction';
+import {merge} from 'src/ETL/transformers/merge';
 
 interface InputLists {
   artistList: Artist[];

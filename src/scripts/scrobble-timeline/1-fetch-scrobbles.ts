@@ -11,7 +11,7 @@ import {
   getTodayDateString,
   getYesterdayDateString,
 } from 'src/utils/date';
-import {fetchRecentTracks} from 'src/connectors/lastfm';
+import {fetchRecentTracks} from 'src/ETL/extractors/lastfm';
 
 const argv = process.argv.slice(2);
 

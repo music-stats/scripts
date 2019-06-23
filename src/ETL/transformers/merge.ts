@@ -1,79 +1,7 @@
 import {Artist, ArtistArea, MergedArtist} from 'src/types/artist';
-import {Correction, CorrectionDataType} from 'src/types/config';
+import {ArtistNameCorrection, AreaCorrection, ArtistAreaCorrection, ParsedCorrections} from 'src/types/correction';
 
-import config from 'src/config';
-import {readJsonFile, readTxtMultilineFolder, TxtMultilineFolderContent} from 'src/utils/file';
 import log, {warn, stripMultiline} from 'src/utils/log';
-
-interface ArtistNameCorrection {
-  [name: string]: string;
-}
-
-interface AreaCorrection {
-  [city: string]: string;
-}
-
-interface ArtistAreaCorrection {
-  [artist: string]: string;
-}
-
-interface ParsedCorrections {
-  artistNameCorrection: ArtistNameCorrection;
-  artistAreaCorrection: ArtistAreaCorrection;
-  areaCorrection: AreaCorrection;
-}
-
-type AnyParsedCorrection = ArtistNameCorrection | AreaCorrection | ArtistAreaCorrection;
-type ParsedCorrectionsList = [ArtistNameCorrection, AreaCorrection, ArtistAreaCorrection];
-
-function upperCaseFirstLetter(value: string): string {
-  return value.charAt(0).toUpperCase() + value.slice(1);
-}
-
-// Converts "united-states" to "United States".
-function convertFileBaseNameToArea(fileName: string): string {
-  return fileName.split('-').map(upperCaseFirstLetter).join(' ');
-}
-
-function convertTxtMultilineFolderContentToCorrection(folderContent: TxtMultilineFolderContent): AnyParsedCorrection {
-  const correction: AnyParsedCorrection = {};
-
-  Object.entries(folderContent).forEach(([fileName, fileContent]) => {
-    const area = convertFileBaseNameToArea(fileName);
-
-    fileContent.forEach((fileString) => correction[fileString] = area);
-  });
-
-  return correction;
-}
-
-function loadCorrection({dataType, filePath}: Correction): Promise<AnyParsedCorrection> {
-  if (dataType === CorrectionDataType.JsonFile) {
-    return readJsonFile(filePath);
-  }
-
-  if (dataType === CorrectionDataType.TxtFolder) {
-    return readTxtMultilineFolder(filePath)
-      .then(convertTxtMultilineFolderContentToCorrection);
-  }
-
-  return Promise.reject('Data type is not supported');
-}
-
-export function loadAllCorrections(): Promise<ParsedCorrections> {
-  const {artistName, artistArea, area} = config.scripts.artistAreaMap.mergeArtists.corrections;
-
-  return Promise.all([
-    artistName,
-    artistArea,
-    area,
-  ].map(loadCorrection))
-    .then(([artistNameCorrection, artistAreaCorrection, areaCorrection]: ParsedCorrectionsList) => ({
-      artistNameCorrection,
-      artistAreaCorrection,
-      areaCorrection,
-    }));
-}
 
 interface ArtistLookup {
   [name: string]: Artist;
@@ -90,8 +18,8 @@ function deduplicateArtists(
   Object.entries(artistNameCorrection).forEach(([name, correctName]) => {
     const artist = artistLookup[name];
 
-    // it could be that artist name appears in the correction list
-    // but doesn't appear in the artist list (e.g. a known correction for future or simply removes artist)
+    // it could be that some artist name appears in the correction list
+    // but doesn't appear in the artist list (e.g. a known correction for future or simply removed artist)
     if (!artist) {
       warn(stripMultiline(`
         merge correction not needed: "${name}" -> "${correctName}"
