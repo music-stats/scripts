@@ -28,7 +28,7 @@ const config: Config = {
         perPage: 200,
       },
       cache: {
-        ttl: 60 * 60 * 1000,
+        ttl: 60 * 60 * 1000, // 1 hour
         dir: path.resolve(cacheDir, 'lastfm/'),
       },
     },
@@ -45,7 +45,7 @@ const config: Config = {
         countDefault: 10,
       },
       cache: {
-        ttl: 365 * 24 * 60 * 60 * 1000,
+        ttl: 365 * 24 * 60 * 60 * 1000, // 1 year
         dir: path.resolve(cacheDir, 'musicbrainz/'),
       },
     },

@@ -6,7 +6,8 @@ import {writeFile} from 'src/utils/file';
 import log, {proxyLogLength} from 'src/utils/log';
 import {
   isDateStringValid,
-  compareDates,
+  compareDateStrings,
+  dateToUnixTimeStamp,
   dateToString,
   getTodayDateString,
   getYesterdayDateString,
@@ -29,7 +30,7 @@ const from = argv[0] && !isFlagArg(argv[0]) && dateToString(new Date(argv[0])) |
 const to = argv[1] && !isFlagArg(argv[1]) && dateToString(new Date(argv[1])) || getTodayDateString();
 const toBypassCache = argv.includes('--no-cache');
 
-if (compareDates(from, to) > 0) {
+if (compareDateStrings(from, to) > 0) {
   console.error(`"from" (${from}) must be less than "to" (${to})`);
   process.exit(1);
 }
@@ -44,8 +45,8 @@ function extract(): Promise<LastfmRecentTrack[]> {
 
   return fetchRecentTracks(
     config.connectors.lastfm.username,
-    from,
-    to,
+    dateToUnixTimeStamp(new Date(from)),
+    dateToUnixTimeStamp(new Date(to)),
     toBypassCache,
   );
 }

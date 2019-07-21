@@ -2,7 +2,7 @@ export function isDateStringValid(value: string): boolean {
   return Boolean(Date.parse(value));
 }
 
-export function compareDates(a: string, b: string): number {
+export function compareDateStrings(a: string, b: string): number {
   const aDate = new Date(a);
   const bDate = new Date(b);
 
@@ -20,6 +20,10 @@ export function getYesterdayDateString(): string {
   date.setTime(Date.now() - msInOneDay);
 
   return dateToString(date);
+}
+
+export function dateToUnixTimeStamp(date: Date) {
+  return Math.round(date.getTime() / 1000);
 }
 
 export function dateToString(date: Date): string {

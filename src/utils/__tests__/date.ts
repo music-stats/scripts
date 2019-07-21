@@ -1,8 +1,9 @@
 import {
   isDateStringValid,
-  compareDates,
+  compareDateStrings,
   getTodayDateString,
   getYesterdayDateString,
+  dateToUnixTimeStamp,
   dateToString,
 } from '../date';
 
@@ -24,11 +25,11 @@ describe('date utils', () => {
     });
   });
 
-  describe('compareDates', () => {
+  describe('compareDateStrings()', () => {
     test('returns number of milliseconds between two dates', () => {
-      expect(compareDates('2005-06-14', '2008-06-14')).toBe(-94694400000);
-      expect(compareDates('2008-02-18', '2008-02-18')).toBe(0);
-      expect(compareDates('2012-10-28', '2011-01-05')).toBe(57196800000);
+      expect(compareDateStrings('2005-06-14', '2008-06-14')).toBe(-94694400000);
+      expect(compareDateStrings('2008-02-18', '2008-02-18')).toBe(0);
+      expect(compareDateStrings('2012-10-28', '2011-01-05')).toBe(57196800000);
     });
   });
 
@@ -75,6 +76,15 @@ describe('date utils', () => {
         setToday('2000-01-01');
         expect(getYesterdayDateString()).toBe('1999-12-31');
       });
+    });
+  });
+
+  describe('dateToUnixTimeStamp()', () => {
+    test('converts a given date to Unix Time (seconds)', () => {
+      expect(dateToUnixTimeStamp(new Date('2008'))).toBe(1199145600);
+      expect(dateToUnixTimeStamp(new Date('2010-02'))).toBe(1264982400);
+      expect(dateToUnixTimeStamp(new Date('1950-03-12'))).toBe(-625104000);
+      expect(dateToUnixTimeStamp(new Date('2049-09-02'))).toBe(2514153600);
     });
   });
 

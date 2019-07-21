@@ -24,6 +24,7 @@ deps to consider for the server-side application: [`koa`](http://koajs.com/#appl
 
 - [x] [last.fm](https://www.last.fm/api/intro)
   - [x] [`library.getArtists`](https://www.last.fm/api/show/library.getArtists)
+  - [x] [`user.getRecentTracks`](https://www.last.fm/api/show/user.getRecentTracks)
   - [ ] [`user.getTopArtists`](https://www.last.fm/api/show/user.getTopArtists) (pagination is fine)
   - [ ] [`user.getArtistTracks`](https://www.last.fm/api/show/user.getArtistTracks) (pagination seems to be weird, always giving `"totalPages": "0"`)
   - [ ] [`artist.getInfo`](https://www.last.fm/api/show/artist.getInfo) and [`track.getInfo`](https://www.last.fm/api/show/track.getInfo) (there are also `artist.getTags` and `track.getTags` endpoints but those simply return lists of tag names and URLs, while `.getInfo` also supplies tags plus additional data, e.g. track duration)
@@ -66,9 +67,9 @@ $ npm run build:watch  # compile with watch
 #### Fetch top artists for a given last.fm user
 
 ```bash
-$ npm run script:artist-area-map:1-fetch-artists [50] [--no-color] [--no-cache]
-#                                                 ^
-#                                                 number of artists, default is set in the config
+$ npm run script:artist-area-map:1-fetch-artists -- [50] [--no-color] [--no-cache]
+#                                                    ^
+#                                                    number of artists, default is set in the config
 ```
 
 ##### Input prerequisites
@@ -100,9 +101,9 @@ Content:
 #### Fetch areas for a given set of artists
 
 ```bash
-$ npm run script:artist-area-map:2-fetch-artists-areas [10] [--no-color] [--no-cache]
-#                                                       ^
-#                                                       number of artists, default is set in the config
+$ npm run script:artist-area-map:2-fetch-artists-areas -- [10] [--no-color] [--no-cache]
+#                                                          ^
+#                                                          number of artists, default is set in the config
 ```
 
 ##### Input prerequisites
@@ -129,7 +130,7 @@ Content:
 #### Merge results of two scripts above
 
 ```bash
-$ npm run script:artist-area-map:3-merge-artists [--no-color]
+$ npm run script:artist-area-map:3-merge-artists -- [--no-color]
 ```
 
 ##### Input prerequisites
@@ -164,11 +165,11 @@ Content:
 #### Fetch all scrobbles
 
 ```bash
-$ npm run script:scrobble-timeline:1-fetch-scrobbles [2019-02-25] [2019-03-10] [--no-color] [--no-cache]
-#                                                     ^            ^
-#                                                     |            date to (YYYY-MM-DD), defaults to today
-#                                                     |
-#                                                     date from (YYYY-MM-DD), defaults to yesterday
+$ npm run script:scrobble-timeline:1-fetch-scrobbles -- [2019-02-25] [2019-03-10] [--no-color] [--no-cache]
+#                                                        ^            ^
+#                                                        |            date to (YYYY-MM-DD), defaults to today
+#                                                        |
+#                                                        date from (YYYY-MM-DD), defaults to yesterday
 ```
 
 ##### Input prerequisites

@@ -14,9 +14,14 @@ export interface LibraryResponseData {
   };
 }
 
+export interface RecentTracksRequestSpecificParams {
+  from: number;
+  to: number;
+}
+
 // @see: https://www.last.fm/api/show/user.getRecentTracks
 export interface RecentTracksResponseData {
-  recentTracks: {
+  recenttracks: {
     track: RecentTrack[];
     '@attr': PaginationMetadata;
   };

@@ -5,7 +5,8 @@ import * as dotenv from 'dotenv';
 
 import {
   LibraryResponseData,
-  // RecentTracksResponseData,
+  RecentTracksRequestSpecificParams,
+  RecentTracksResponseData,
   Artist,
   RecentTrack,
 } from 'src/types/lastfm';
@@ -16,9 +17,6 @@ import log, {logRequest} from 'src/utils/log';
 import {retrieveResponseDataCache, storeResponseDataCache} from 'src/utils/cache';
 
 const {parsed: {LASTFM_API_KEY}} = dotenv.config();
-
-type LibraryResponse = AxiosResponse<LibraryResponseData>;
-// type RecentTracksResponse = AxiosResponse<RecentTracksResponseData>;
 
 export function buildApiUrl(method: string, params = {}): string {
   const defaultParams = {
@@ -33,35 +31,39 @@ export function buildApiUrl(method: string, params = {}): string {
   })}`;
 }
 
-function fetchPage(
+function fetchPage<ResponseData, SpecificParams>(
+  method: string,
   username: string,
   pageNumber: number,
   pagesCount: number,
+  perPage: number,
   toBypassCache: boolean,
-): Promise<LibraryResponseData> {
+  specificParams?: SpecificParams,
+): Promise<ResponseData> {
   const url = buildApiUrl(
-    'library.getartists',
+    method,
     {
       user: username,
-      limit: config.connectors.lastfm.artists.perPage,
+      limit: perPage,
       page: pageNumber + 1, // bounds: 1-1000000
+      ...specificParams,
     },
   );
   const headers = {
     'User-Agent': config.userAgent,
   };
 
-  function requestLastfmLibrary(): Promise<LibraryResponse> {
+  function requestLastfmLibrary(): Promise<AxiosResponse<ResponseData>> {
     logRequest(url);
     return axios.get(url, {headers});
   }
 
-  function retrieveLastfmLibraryCache(): Promise<LibraryResponseData> {
-    return retrieveResponseDataCache<LibraryResponseData>(url, config.connectors.lastfm.cache);
+  function retrieveLastfmLibraryCache(): Promise<ResponseData> {
+    return retrieveResponseDataCache<ResponseData>(url, config.connectors.lastfm.cache);
   }
 
-  function storeLastfmLibraryCache(response: LibraryResponse): Promise<LibraryResponse> {
-    return storeResponseDataCache<LibraryResponseData>(url, response.data, config.connectors.lastfm.cache)
+  function storeLastfmLibraryCache(response: AxiosResponse<ResponseData>): Promise<AxiosResponse<ResponseData>> {
+    return storeResponseDataCache<ResponseData>(url, response.data, config.connectors.lastfm.cache)
       .then(() => response);
   }
 
@@ -71,7 +73,7 @@ function fetchPage(
   }
 
   log();
-  log(`fetching last.fm page #${pageNumber + 1}/${pagesCount}`);
+  log(`fetching last.fm "${method}" page #${pageNumber + 1}/${pagesCount}`);
 
   return retrieveLastfmLibraryCache()
     .then((libraryCache) => {
@@ -103,7 +105,15 @@ export function fetchLibraryArtists(
     maxPageNumber,
   );
   const fetchAllPages = times(
-    (pageNumber) => fetchPage.bind(null, username, pageNumber, pagesCount, toBypassCache),
+    (pageNumber) => fetchPage.bind(
+      null,
+      'library.getartists',
+      username,
+      pageNumber,
+      pagesCount,
+      perPage,
+      toBypassCache,
+    ),
     pagesCount,
   );
   const cutExtraArtists = (rawArtistList: Artist[]) => take(artistsCount, rawArtistList);
@@ -117,21 +127,28 @@ export function fetchLibraryArtists(
 
 export function fetchRecentTracks(
   username: string,
-  from: string,
-  to: string,
+  from: number,
+  to: number,
   toBypassCache: boolean,
 ): Promise<RecentTrack[]> {
-  // http://ws.audioscrobbler.com/2.0/?
-  //   method=user.getrecenttracks&
-  //   api_key=33650ee56ab71aee770161885f83054c&
-  //   format=json&
-  //   user=markhovskiy&
-  //   from=1263737600&
-  //   to=1283636200&
-  //   limit=200&
-  //   page=4
+  // @todo: also take "maxPageNumber" from config and take it into account
+  const {perPage} = config.connectors.lastfm.recentTracks;
+  const fetchFirstPage = fetchPage.bind<null, any, Promise<RecentTracksResponseData>>(
+    null,
+    'user.getrecenttracks',
+    username,
+    0,
+    1,
+    perPage,
+    toBypassCache,
+    {
+      from,
+      to,
+    } as RecentTracksRequestSpecificParams,
+  );
 
-  console.warn(`not implemented: "fetchRecentTracks(${username}, ${from}, ${to}, ${toBypassCache})"`);
-
-  return Promise.resolve([]);
+  // @todo: take the "totalPages" value and request fetching of all remaining pages as a sequence
+  return fetchFirstPage()
+    .then((data) => {console.log(data); return data})
+    .then((data) => data.recenttracks.track);
 }
