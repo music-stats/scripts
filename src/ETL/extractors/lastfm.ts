@@ -35,7 +35,7 @@ function fetchPage<ResponseData, SpecificParams>(
   method: string,
   username: string,
   pageNumber: number,
-  pagesCount: number,
+  pagesCount: number | null,
   perPage: number,
   toBypassCache: boolean,
   specificParams?: SpecificParams,
@@ -73,7 +73,7 @@ function fetchPage<ResponseData, SpecificParams>(
   }
 
   log();
-  log(`fetching last.fm "${method}" page #${pageNumber + 1}/${pagesCount}`);
+  log(`fetching last.fm "${method}" page #${pageNumber + 1}/${pagesCount || '?'}`);
 
   return retrieveLastfmLibraryCache()
     .then((libraryCache) => {
@@ -87,9 +87,16 @@ function fetchPage<ResponseData, SpecificParams>(
     });
 }
 
-function concatPages(pagesData: LibraryResponseData[]): Artist[] {
+function concatLibraryArtistsPages(pagesData: LibraryResponseData[]): Artist[] {
   return pagesData.reduce(
     (rawArtistList: Artist[], pageData) => rawArtistList.concat(pageData.artists.artist),
+    [],
+  );
+}
+
+function concatRecentTracksPages(pagesData: RecentTracksResponseData[]): RecentTrack[] {
+  return pagesData.reduce(
+    (rawRecentTrackList: RecentTrack[], pageData) => rawRecentTrackList.concat(pageData.recenttracks.track),
     [],
   );
 }
@@ -121,7 +128,7 @@ export function fetchLibraryArtists(
   log(`pages: ${pagesCount}`);
 
   return sequence(fetchAllPages)
-    .then(concatPages)
+    .then(concatLibraryArtistsPages)
     .then(cutExtraArtists);
 }
 
@@ -131,24 +138,51 @@ export function fetchRecentTracks(
   to: number,
   toBypassCache: boolean,
 ): Promise<RecentTrack[]> {
-  // @todo: also take "maxPageNumber" from config and take it into account
-  const {perPage} = config.connectors.lastfm.recentTracks;
+  const {perPage, maxPageNumber} = config.connectors.lastfm.recentTracks;
+  const dateRange = {
+    from,
+    to,
+  } as RecentTracksRequestSpecificParams;
   const fetchFirstPage = fetchPage.bind<null, any, Promise<RecentTracksResponseData>>(
     null,
     'user.getrecenttracks',
     username,
     0,
-    1,
+    null, // at this point, the "pagesCount" value is unknown
     perPage,
     toBypassCache,
-    {
-      from,
-      to,
-    } as RecentTracksRequestSpecificParams,
+    dateRange,
   );
+  const fetchRemainingPages = (firstPageData: RecentTracksResponseData) => {
+    const pagesCount = Math.min(
+      parseInt(firstPageData.recenttracks['@attr'].totalPages, 10),
+      maxPageNumber,
+    );
+    const allPages = [
+      firstPageData,
+    ];
 
-  // @todo: take the "totalPages" value and request fetching of all remaining pages as a sequence
+    if (pagesCount < 2) {
+      return Promise.resolve(allPages);
+    }
+
+    return sequence(times(
+      (pageNumber) => fetchPage.bind<null, any, Promise<RecentTracksResponseData>>(
+        null,
+        'user.getrecenttracks',
+        username,
+        pageNumber + 1,
+        pagesCount,
+        perPage,
+        toBypassCache,
+        dateRange,
+      ),
+      pagesCount - 1,
+    ))
+      .then((remainingPages) => allPages.concat(remainingPages));
+  };
+
   return fetchFirstPage()
-    .then((data) => {console.log(data); return data})
-    .then((data) => data.recenttracks.track);
+    .then(fetchRemainingPages)
+    .then(concatRecentTracksPages);
 }

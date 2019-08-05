@@ -62,6 +62,7 @@ function aggregatePlaycounts(scrobbleList: Scrobble[]): Scrobble[] {
 }
 
 function convert({name, mbid, date, album, artist}: LastfmRecentTrack): Scrobble {
+  // @todo: shift date by timezone offset
   return {
     date: date['#text'],
     track: {
