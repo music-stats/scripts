@@ -3,6 +3,7 @@ import {
   compareDateStrings,
   getTodayDateString,
   getYesterdayDateString,
+  unixTimeStampToDateTimeString,
   dateToUnixTimeStamp,
   dateToString,
 } from '../date';
@@ -79,6 +80,13 @@ describe('date utils', () => {
     });
   });
 
+  describe('unixTimeStampToDateTimeString()', () => {
+    test('converts a given Unix Time (seconds) to string as "YYYY-MM-DD HH:MM"', () => {
+      expect(unixTimeStampToDateTimeString(1565122865)).toBe('2019-08-06 23:21');
+      expect(unixTimeStampToDateTimeString(1562385900)).toBe('2019-07-06 07:05');
+    });
+  });
+
   describe('dateToUnixTimeStamp()', () => {
     test('converts a given date to Unix Time (seconds)', () => {
       expect(dateToUnixTimeStamp(new Date('2008'))).toBe(1199145600);
@@ -89,7 +97,7 @@ describe('date utils', () => {
   });
 
   describe('dateToString()', () => {
-    test('formats a given date as YYYY-MM-DD', () => {
+    test('formats a given date as "YYYY-MM-DD"', () => {
       expect(dateToString(new Date('2002'))).toBe('2002-01-01');
       expect(dateToString(new Date('1995-08'))).toBe('1995-08-01');
       expect(dateToString(new Date('1897-11-28'))).toBe('1897-11-28');

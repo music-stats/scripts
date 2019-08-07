@@ -11,6 +11,7 @@ import {
   dateToString,
   getTodayDateString,
   getYesterdayDateString,
+  unixTimeStampToDateTimeString,
 } from 'src/utils/date';
 import {fetchRecentTracks} from 'src/ETL/extractors/lastfm';
 
@@ -62,9 +63,8 @@ function aggregatePlaycounts(scrobbleList: Scrobble[]): Scrobble[] {
 }
 
 function convert({name, mbid, date, album, artist}: LastfmRecentTrack): Scrobble {
-  // @todo: shift date by timezone offset
   return {
-    date: date['#text'],
+    date: unixTimeStampToDateTimeString(parseInt(date.uts, 10)),
     track: {
       name,
       playcount: null,
