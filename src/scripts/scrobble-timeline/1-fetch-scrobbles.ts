@@ -14,6 +14,7 @@ import {
   unixTimeStampToDateTimeString,
 } from 'src/utils/date';
 import {fetchRecentTracks} from 'src/ETL/extractors/lastfm';
+import {aggregatePlaycounts} from 'src/ETL/transformers/aggregate';
 
 const argv = process.argv.slice(2);
 
@@ -55,11 +56,6 @@ function extract(): Promise<LastfmRecentTrack[]> {
 function transform(rawRecentTrackList: LastfmRecentTrack[]): Scrobble[] {
   // @todo: apply corrections before aggregating playcount sums
   return aggregatePlaycounts(rawRecentTrackList.map(convert));
-}
-
-function aggregatePlaycounts(scrobbleList: Scrobble[]): Scrobble[] {
-  // @todo: collect sums of "playcount" property for tracks, albums and artists
-  return scrobbleList;
 }
 
 function convert({name, mbid, date, album, artist}: LastfmRecentTrack): Scrobble {
