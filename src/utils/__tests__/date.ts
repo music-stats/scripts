@@ -82,8 +82,8 @@ describe('date utils', () => {
 
   describe('unixTimeStampToDateTimeString()', () => {
     test('converts a given Unix Time (seconds) to string as "YYYY-MM-DD HH:MM"', () => {
-      expect(unixTimeStampToDateTimeString(1565122865)).toBe('2019-08-06 23:21');
-      expect(unixTimeStampToDateTimeString(1562385900)).toBe('2019-07-06 07:05');
+      expect(unixTimeStampToDateTimeString(1565122865)).toBe('2019-08-06 22:21');
+      expect(unixTimeStampToDateTimeString(1562385900)).toBe('2019-07-06 06:05');
     });
   });
 
