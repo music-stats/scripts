@@ -212,6 +212,22 @@ Content:
       mbid: 'f2eef649-a6d5-4114-afba-e50ab26254d2' } ]
 ```
 
+#### Merge all fetched scrobbles together
+
+```bash
+$ npm run script:scrobble-timeline:2-merge-scrobbles -- [--no-color]
+```
+
+##### Input prerequisites
+
+Expects input files (`.json`) to be located at `output/scrobble-timeline/1-scrobbles/`.
+
+##### Example output
+
+Filename: `output/scrobble-timeline/2-merged-scrobbles.json`.
+
+Content: same as from the fetching commands, but everything put into a single chronological collection (dates reversed: from older to recent) with playcount values updated accordingly.
+
 [license-image]: https://img.shields.io/github/license/music-stats/scripts.svg?style=flat-square
 [license-url]: https://github.com/music-stats/scripts/blob/master/LICENSE
 [code-size-image]: https://img.shields.io/github/languages/code-size/music-stats/scripts.svg?style=flat-square
