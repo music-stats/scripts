@@ -2,6 +2,7 @@
 1914
 5 vymir
 8x8
+BLOOMS CORDA
 Bluedance
 Bojevilla
 BoomBox
@@ -12,6 +13,7 @@ DELFINIA
 Delia
 Dennis Adu
 Disdjointed
+Dysphoria
 DZ'OB
 Dz'ob
 Etwas Unders
@@ -53,6 +55,7 @@ NAILERY
 Natolich
 Novi
 nug
+oh, deer!
 Onuka
 Orpha
 Palmo X
@@ -83,6 +86,7 @@ THE MAUNT
 The Nietzsche
 The Wicker Man
 Tik Tu
+torban
 Velikhan
 Vovk
 Yeyo.
@@ -90,6 +94,8 @@ Yuko
 Zombo
 Анна
 Ансамбль Арніка
+Ансамбль Водограй
+Ансамбль Візерунки Шляхів
 Ансамбль Калина
 Був'є
 вагоновожатые
@@ -144,4 +150,5 @@ Zombo
 Чека
 ЧЕКА
 Юра Самовілов
+Юрій Рожков
 Ґорґішелі
