@@ -72,6 +72,7 @@ export default interface Config {
 
     scrobbleTimeline: {
       fetchScrobbles: Script;
+      mergeScrobbles: Script;
     };
   };
 }

@@ -6,6 +6,7 @@ import {
   unixTimeStampToDateTimeString,
   dateToUnixTimeStamp,
   dateToString,
+  dateToEndDayDate,
 } from '../date';
 
 describe('date utils', () => {
@@ -103,5 +104,12 @@ describe('date utils', () => {
       expect(dateToString(new Date('1897-11-28'))).toBe('1897-11-28');
       expect(dateToString(new Date('1600-10-05 08:15:20'))).toBe('1600-10-05');
     });
+  });
+
+  describe('dateToEndDayDate()', () => {
+    test('adds 23:59:59 to a given date', () => {
+      expect(dateToEndDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-12T21:59:59.000Z');
+      expect(dateToEndDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-14T21:59:59.000Z');
+    })
   });
 });

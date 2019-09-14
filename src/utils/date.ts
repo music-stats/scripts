@@ -63,3 +63,9 @@ function leftPadDatePart(value: number): string {
 
   return value.toString();
 }
+
+export function dateToEndDayDate(date: Date): Date {
+  date.setHours(23, 59, 59);
+
+  return date;
+}

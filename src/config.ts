@@ -85,6 +85,10 @@ const config: Config = {
       fetchScrobbles: {
         outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '1-scrobbles/', '<from>--<to>.json'),
       },
+
+      mergeScrobbles: {
+        outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '2-merged-scrobbles.json'),
+      },
     },
   },
 };

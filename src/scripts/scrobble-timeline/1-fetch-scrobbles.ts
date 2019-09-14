@@ -9,6 +9,7 @@ import {
   compareDateStrings,
   dateToUnixTimeStamp,
   dateToString,
+  dateToEndDayDate,
   getTodayDateString,
   getYesterdayDateString,
   unixTimeStampToDateTimeString,
@@ -48,14 +49,19 @@ function extract(): Promise<LastfmRecentTrack[]> {
   return fetchRecentTracks(
     config.connectors.lastfm.username,
     dateToUnixTimeStamp(new Date(from)),
-    dateToUnixTimeStamp(new Date(to)),
+    dateToUnixTimeStamp(dateToEndDayDate(new Date(to))),
     toBypassCache,
   );
 }
 
 function transform(rawRecentTrackList: LastfmRecentTrack[]): Scrobble[] {
   // @todo: apply corrections before aggregating playcount sums
-  return aggregatePlaycounts(rawRecentTrackList.map(convert));
+  return aggregatePlaycounts(
+    rawRecentTrackList
+      .filter(({date}) => date) // now playing track doesn't have "date"
+      .reverse() // scrobbles originally come in reversed chronological order
+      .map(convert),
+  );
 }
 
 function convert({name, mbid, date, album, artist}: LastfmRecentTrack): Scrobble {
@@ -85,6 +91,7 @@ function load(scrobbleList: Scrobble[]): Promise<Scrobble[]> {
     `${from}--${to}`,
   );
 
+  log();
   log(`writing to "${outputFilePath}"`);
 
   return writeFile(outputFilePath, scrobbleList);

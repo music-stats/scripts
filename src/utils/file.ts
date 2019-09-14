@@ -17,6 +17,15 @@ export function readJsonFile<DataType>(filePath: string): Promise<DataType> {
     .then(JSON.parse);
 }
 
+export function readAllJsonFiles<DataType>(filePathPattern: string): Promise<DataType[]> {
+  const folderPath = path.dirname(filePathPattern);
+
+  fs.promises.readdir(folderPath)
+    .then(console.log);
+
+  return Promise.all([]);
+}
+
 export function writeFile<DataType>(filePath: string, data: DataType): Promise<DataType> {
   return fs.promises.writeFile(filePath, JSON.stringify(data, null, 2))
     .then(() => data);

@@ -10,3 +10,5 @@ export interface Scrobble {
   album: Item;
   artist: Item;
 }
+
+export type ScrobbleList = Scrobble[];
