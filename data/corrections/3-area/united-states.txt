@@ -1,4 +1,5 @@
 Allentown
+Atlanta
 Austin
 Baltimore
 Bel Air
@@ -26,7 +27,9 @@ New York
 Newbern
 North Carolina
 Oakland
+Oldham County
 Raleigh
 San Antonio
 San Francisco
+Seattle
 Stanley
