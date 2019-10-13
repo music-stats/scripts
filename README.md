@@ -29,6 +29,7 @@ deps to consider for the server-side application: [`koa`](http://koajs.com/#appl
   - [ ] [`user.getArtistTracks`](https://www.last.fm/api/show/user.getArtistTracks) (pagination seems to be weird, always giving `"totalPages": "0"`)
   - [ ] [`artist.getInfo`](https://www.last.fm/api/show/artist.getInfo) and [`track.getInfo`](https://www.last.fm/api/show/track.getInfo) (there are also `artist.getTags` and `track.getTags` endpoints but those simply return lists of tag names and URLs, while `.getInfo` also supplies tags plus additional data, e.g. track duration)
 - [x] [MusicBrainz](https://musicbrainz.org/doc/Development/XML_Web_Service/Version_2)
+- [x] [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes as [JSON](https://gist.github.com/ssskip/5a94bfcd2835bf1dea52)
 
 ### To consider
 

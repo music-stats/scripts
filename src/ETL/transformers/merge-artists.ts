@@ -1,5 +1,8 @@
-import {Artist, ArtistArea, MergedArtist} from 'src/types/artist';
+import {invertObj} from 'ramda';
+
+import {Artist, ArtistArea, MergedArtist, PackedArtist} from 'src/types/artist';
 import {ArtistNameCorrection, AreaCorrection, ArtistAreaCorrection, ParsedCorrections} from 'src/types/correction';
+import {CountryCodeDataset} from 'src/types/dataset';
 
 import log, {warn, stripMultiline} from 'src/utils/log';
 
@@ -122,4 +125,27 @@ function getArtistArea(
   warn(`area not found: ${artist} (${playcount})`);
 
   return null;
+}
+
+export function convertToSortedList(
+  artistList: MergedArtist[],
+  countryCodeDataset: CountryCodeDataset,
+): PackedArtist[] {
+  const areaToCountryCode = invertObj(countryCodeDataset);
+
+  return artistList
+    .map(({name, playcount, area}) => {
+      const countryCode = areaToCountryCode[area];
+
+      if (!countryCode) {
+        warn(`country code not found: ${area} (${name})`);
+      }
+
+      return [
+        name,
+        playcount,
+        countryCode,
+      ];
+    })
+    .sort((a: PackedArtist, b: PackedArtist) => a[0].toUpperCase() < b[0].toUpperCase() ? -1 : 1) as PackedArtist[];
 }

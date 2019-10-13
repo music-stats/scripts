@@ -4,6 +4,7 @@ import Config, {CorrectionDataType} from 'src/types/config';
 
 const rootDir = path.resolve(__dirname, '../../');
 const correctionsDir = path.resolve(rootDir, 'data/corrections/');
+const datasetsDir = path.resolve(rootDir, 'data/datasets/');
 const cacheDir = path.resolve(rootDir, 'cache/');
 const outputDir = path.resolve(rootDir, 'output/');
 const artistAreaMapScriptOutputDir = path.resolve(outputDir, 'artist-area-map/');
@@ -90,6 +91,12 @@ const config: Config = {
         outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '2-merged-scrobbles.json'),
       },
     },
+  },
+
+  datasets: {
+    countryCodes: {
+      filePath: path.resolve(datasetsDir, 'country-codes-iso-3166-1-alpha-2.json'),
+    }
   },
 };
 

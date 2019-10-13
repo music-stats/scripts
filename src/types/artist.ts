@@ -14,3 +14,6 @@ export interface MergedArtist {
   playcount: number;
   area: string;
 }
+
+// [name, playcount, countryCode]
+export type PackedArtist = [string, number, string];

@@ -55,6 +55,10 @@ interface MergeArtistsScript extends Script {
   };
 }
 
+interface Dataset {
+  filePath: string;
+}
+
 export default interface Config {
   userAgent: string;
 
@@ -74,5 +78,9 @@ export default interface Config {
       fetchScrobbles: Script;
       mergeScrobbles: Script;
     };
+  };
+
+  datasets: {
+    countryCodes: Dataset;
   };
 }

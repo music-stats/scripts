@@ -26,8 +26,18 @@ export function readAllJsonFiles<DataType>(filePathPattern: string): Promise<Dat
   return Promise.all([]);
 }
 
-export function writeFile<DataType>(filePath: string, data: DataType): Promise<DataType> {
-  return fs.promises.writeFile(filePath, JSON.stringify(data, null, 2))
+export function writeFile<DataType>(
+  filePath: string,
+  data: DataType,
+  jsonStringifySpace: number = 2,
+  converter: (value: string) => string = null,
+): Promise<DataType> {
+  const dataString = JSON.stringify(data, null, jsonStringifySpace);
+
+  return fs.promises.writeFile(
+    filePath,
+    converter ? converter(dataString) : dataString
+  )
     .then(() => data);
 }
 

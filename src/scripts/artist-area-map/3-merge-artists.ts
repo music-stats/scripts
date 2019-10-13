@@ -1,10 +1,11 @@
-import {Artist, ArtistArea, MergedArtist} from 'src/types/artist';
+import {Artist, ArtistArea, PackedArtist} from 'src/types/artist';
 
 import config from 'src/config';
 import {readJsonFile, writeFile} from 'src/utils/file';
 import log, {proxyLogLength} from 'src/utils/log';
 import {loadAllCorrections} from 'src/ETL/extractors/correction';
-import {merge} from 'src/ETL/transformers/merge-artists';
+import {loadCountryCodeDataset} from 'src/ETL/extractors/dataset';
+import {merge, convertToSortedList} from 'src/ETL/transformers/merge-artists';
 
 interface InputLists {
   artistList: Artist[];
@@ -22,18 +23,22 @@ function extract(): Promise<InputLists> {
     }));
 }
 
-function transform({artistList, artistAreaList}: InputLists): Promise<MergedArtist[]> {
+function transform({artistList, artistAreaList}: InputLists): Promise<PackedArtist[]> {
   return loadAllCorrections()
-    .then((corrections) => merge(artistList, artistAreaList, corrections));
+    .then((corrections) => merge(artistList, artistAreaList, corrections))
+    .then((artistList) => loadCountryCodeDataset()
+      .then((countryCodeDataset) => convertToSortedList(artistList, countryCodeDataset))
+    );
 }
 
-function load(mergedArtistList: MergedArtist[]): Promise<MergedArtist[]> {
+function load(mergedArtistList: PackedArtist[]): Promise<PackedArtist[]> {
   const {outputFilePath} = config.scripts.artistAreaMap.mergeArtists;
+  const splitArrayStringByLines = (value: string) => value.replace(/\],\[/g, '],\n[');
 
   log();
   log(`writing to "${outputFilePath}"`);
 
-  return writeFile(outputFilePath, mergedArtistList);
+  return writeFile(outputFilePath, mergedArtistList, 0, splitArrayStringByLines);
 }
 
 extract()
