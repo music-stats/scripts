@@ -137,7 +137,10 @@ $ npm run script:artist-area-map:3-merge-artists -- [--no-color]
 ##### Input prerequisites
 
 Expects both input files (`.json`) to be located at `output/artist-area-map/`.
-Blends them together, applying three stages of corrections (see `data/corrections/`).
+Blends them together, applies three stages of corrections (see `data/corrections/`),
+sorts alphabetically by artist name and puts "ISO 3166-1 alpha-2" country codes as area names.
+
+Each `[artist, playcount, countryCode]` entry is placed on a separate line to make diffs easier to digest.
 
 ##### Example output
 
@@ -146,19 +149,11 @@ Filename: `output/artist-area-map/3-merged-artists.json`.
 Content:
 
 ```js
-[ { name: 'Dream Theater',
-    playcount: 769,
-    area: 'United States' },
-  { name: 'Queen',
-    playcount: 757,
-    area: 'United Kingdom' },
+[ [ 'Dream Theater', 769, 'US' ],
+  [ 'Queen', 757, 'GB' ],
   ...
-  { name: 'Обійми Дощу',
-    playcount: 222,
-    area: 'Ukraine' },
-  { name: 'Lake of Tears',
-    playcount: 214,
-    area: 'Sweden' } ]
+  [ 'Обійми Дощу', 222, 'UA' ],
+  [ 'Lake of Tears', 214, 'SE' ] ]
 ```
 
 ### Scrobble timeline
