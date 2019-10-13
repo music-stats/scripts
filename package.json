@@ -1,6 +1,6 @@
 {
   "name": "music-stats-scripts",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "SHOULD become an API gateway between different front-ends and various data providers, currently a set of ETL scripts",
   "author": "Oleksii Markhovskyi",
   "license": "MIT",

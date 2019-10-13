@@ -29,3 +29,9 @@ In development, data format and API may change.
 ```bash
 $ npm run script:scrobble-timeline:1-fetch-scrobbles
 ```
+
+## [1.0.0] - 13.10.2019
+
+### Changed
+
+* Artist-area map uses `[[artist, playcount, countryCode], ...]` dataset format (using "ISO 3166-1 alpha-2" codes).
