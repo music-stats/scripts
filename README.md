@@ -150,10 +150,10 @@ Content:
 
 ```js
 [ [ 'Dream Theater', 769, 'US' ],
+  [ 'Lake of Tears', 214, 'SE' ],
   [ 'Queen', 757, 'GB' ],
-  ...
   [ 'Обійми Дощу', 222, 'UA' ],
-  [ 'Lake of Tears', 214, 'SE' ] ]
+  ... ]
 ```
 
 ### Scrobble timeline

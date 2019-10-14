@@ -24,11 +24,14 @@ function extract(): Promise<InputLists> {
 }
 
 function transform({artistList, artistAreaList}: InputLists): Promise<PackedArtist[]> {
-  return loadAllCorrections()
-    .then((corrections) => merge(artistList, artistAreaList, corrections))
-    .then((artistList) => loadCountryCodeDataset()
-      .then((countryCodeDataset) => convertToSortedList(artistList, countryCodeDataset))
-    );
+  return Promise.all([
+    loadAllCorrections(),
+    loadCountryCodeDataset(),
+  ])
+    .then(([corrections, countryCodeDataset]) => convertToSortedList(
+      merge(artistList, artistAreaList, corrections),
+      countryCodeDataset,
+    ));
 }
 
 function load(mergedArtistList: PackedArtist[]): Promise<PackedArtist[]> {
