@@ -20,7 +20,7 @@ const config: Config = {
       },
       username: 'markhovskiy',
       artists: {
-        maxPageNumber: 10, // @see: https://www.last.fm/api/tos
+        maxPageNumber: 12, // @see: https://www.last.fm/api/tos
         perPage: 200,
         countDefault: 50,
       },
