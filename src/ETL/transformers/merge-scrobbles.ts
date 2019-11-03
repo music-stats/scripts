@@ -1,7 +1,19 @@
-import {ScrobbleList} from 'src/types/scrobble';
+import {Scrobble, ScrobbleList} from 'src/types/scrobble';
 
 export default function merge(scrobbleListList: ScrobbleList[]): ScrobbleList {
-  console.log(scrobbleListList.length);
+  const registry: {[key: string]: true} = {};
+  const result: ScrobbleList = [];
+  const insertOrSkip = (scrobble: Scrobble) => {
+    const {date, artist, track} = scrobble;
+    const key = `${date} - ${artist.name} - ${track.name}`;
 
-  return [];
+    if (!registry[key]) {
+      registry[key] = true;
+      result.push(scrobble);
+    }
+  };
+
+  scrobbleListList.forEach((scrobbleList) => scrobbleList.forEach(insertOrSkip));
+
+  return result;
 }

@@ -174,12 +174,12 @@ None.
 
 ##### Example output
 
-Filename: `output/scrobble-timeline/1-scrobbles/2019-02-25-2019-03-10.json`.
+Filename: `output/scrobble-timeline/1-scrobbles/2019-02-25--2019-03-10.json`.
 
 Content:
 
 ```js
-[ { date: '2019-03-10 18:13',
+[ { date: '2019-02-25 08:38',
     track: {
       name: 'Re-Align',
       playcount: 6,
@@ -193,7 +193,7 @@ Content:
       playcount: 205,
       mbid: 'ac2d1c91-3667-46aa-9fe7-170ca7fce9e2' } },
   ...
-  { date: '2019-02-25 08:38',
+  { date: '2019-03-10 18:13',
     track: {
       name: 'Handle This',
       playcount: 2,
@@ -222,7 +222,7 @@ Expects input files (`.json`) to be located at `output/scrobble-timeline/1-scrob
 
 Filename: `output/scrobble-timeline/2-merged-scrobbles.json`.
 
-Content: same as from the fetching commands, but everything put into a single chronological collection (dates reversed: from older to recent) with playcount values updated accordingly.
+Content: same as from the fetching commands, but everything put into a single chronological collection with playcount values aggregated.
 
 [license-image]: https://img.shields.io/github/license/music-stats/scripts.svg?style=flat-square
 [license-url]: https://github.com/music-stats/scripts/blob/master/LICENSE

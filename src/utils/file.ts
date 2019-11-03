@@ -20,10 +20,10 @@ export function readJsonFile<DataType>(filePath: string): Promise<DataType> {
 export function readAllJsonFiles<DataType>(filePathPattern: string): Promise<DataType[]> {
   const folderPath = path.dirname(filePathPattern);
 
-  fs.promises.readdir(folderPath)
-    .then(console.log);
-
-  return Promise.all([]);
+  return fs.promises.readdir(folderPath)
+    .then((fileNameList) => fileNameList.filter((fileName) => path.extname(fileName) === '.json'))
+    .then((fileNameList) => fileNameList.map((fileName) => readJsonFile<DataType>(path.join(folderPath, fileName))))
+    .then((readJsonFilePromiseList) => Promise.all(readJsonFilePromiseList));
 }
 
 export function writeFile<DataType>(

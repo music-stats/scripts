@@ -34,4 +34,18 @@ $ npm run script:scrobble-timeline:1-fetch-scrobbles
 
 ### Changed
 
-* Artist-area map uses `[[artist, playcount, countryCode], ...]` dataset format (using "ISO 3166-1 alpha-2" codes).
+#### Artist-area map
+
+* Dataset format update: `[[artist, playcount, countryCode], ...]` (with "ISO 3166-1 alpha-2" country codes).
+
+## [1.1.0] - 03.11.2019
+
+### Added
+
+#### Scrobble timeline
+
+Merging script for imported scrobbles. Corrections are not applied yet.
+
+```bash
+$ npm run script:scrobble-timeline:2-merge-scrobbles
+```
