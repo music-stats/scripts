@@ -6,7 +6,6 @@
 SHOULD become an API gateway between different front-ends and various data providers, currently a set of scripts.
 
 ## Tech stack
-
 dev deps:
 [`typescript`](https://www.typescriptlang.org/docs),
 [`jest`](https://jestjs.io/docs/en/expect).
@@ -16,12 +15,11 @@ deps:
 [`ramda`](http://ramdajs.com/docs),
 [`axios`](https://github.com/axios/axios).
 
-deps to consider for the server-side application: [`koa`](http://koajs.com/#application).
+deps to consider for the server-side application:
+[`koa`](http://koajs.com/#application).
 
 ## APIs, datasets
-
 ### In use
-
 - [x] [last.fm](https://www.last.fm/api/intro)
   - [x] [`library.getArtists`](https://www.last.fm/api/show/library.getArtists)
   - [x] [`user.getRecentTracks`](https://www.last.fm/api/show/user.getRecentTracks)
@@ -32,7 +30,6 @@ deps to consider for the server-side application: [`koa`](http://koajs.com/#appl
 - [x] [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes as [JSON](https://gist.github.com/ssskip/5a94bfcd2835bf1dea52)
 
 ### To consider
-
 - [ ] [Spotify](https://developer.spotify.com/documentation/web-api/reference/)
 - [ ] [Songkick](https://www.songkick.com/developer/upcoming-events)
 - [ ] [FMA (Free Music Archive)](https://github.com/mdeff/fma)
@@ -44,15 +41,11 @@ restricting to top 50 artists/tracks. And it doesn't provide any measurable metr
 which is some abstract (i.e. calculated) affinity level. Geo data (e.g. country) is also not there.
 
 ## Setup
-
 ### Environment variables
-
 Create a `.env` file and fill its values according to [`.env.template`](.env.template):
-
 * `LASTFM_API_KEY` (see last.fm [docs](https://www.last.fm/api/authentication))
 
 ### Commands
-
 ```bash
 $ npm i                # install deps
 $ npm run lint         # lint scripts
@@ -62,11 +55,8 @@ $ npm run build:watch  # compile with watch
 ```
 
 ## Scripts
-
 ### Artist-area map
-
 #### Fetch top artists for a given last.fm user
-
 ```bash
 $ npm run script:artist-area-map:1-fetch-artists -- [50] [--no-color] [--no-cache]
 #                                                    ^
@@ -74,15 +64,12 @@ $ npm run script:artist-area-map:1-fetch-artists -- [50] [--no-color] [--no-cach
 ```
 
 ##### Input prerequisites
-
 Username is set in `src/config.ts`.
 
 ##### Example output
-
 Filename: `output/artist-area-map/1-lastfm-user-library.json`.
 
 Content:
-
 ```js
 [ { name: 'Dream Theater',
     playcount: 769,
@@ -100,7 +87,6 @@ Content:
 ```
 
 #### Fetch areas for a given set of artists
-
 ```bash
 $ npm run script:artist-area-map:2-fetch-artists-areas -- [10] [--no-color] [--no-cache]
 #                                                          ^
@@ -108,18 +94,15 @@ $ npm run script:artist-area-map:2-fetch-artists-areas -- [10] [--no-color] [--n
 ```
 
 ##### Input prerequisites
-
 Expects an output of
 `script:artist-area-map:1-fetch-artists`
 to be located at
 `output/artist-area-map/1-lastfm-user-library.json`.
 
 ##### Example output
-
 Filename: `output/artist-area-map/2-musicbrainz-artists-areas.json`.
 
 Content:
-
 ```js
 [ { artist: 'Dream Theater', area: 'New York' }, // New York will be mapped to United States, individual cities aren't supported
   { artist: 'Queen', area: 'Japan' }, // Japan? "mbid" received from last.fm must be wrong, area will be switched to United Kingdom
@@ -129,13 +112,11 @@ Content:
 ```
 
 #### Merge results of two scripts above
-
 ```bash
 $ npm run script:artist-area-map:3-merge-artists -- [--no-color]
 ```
 
 ##### Input prerequisites
-
 Expects both input files (`.json`) to be located at `output/artist-area-map/`.
 Blends them together, applies three stages of corrections (see `data/corrections/`),
 sorts alphabetically by artist name and puts "ISO 3166-1 alpha-2" country codes as area names.
@@ -143,11 +124,9 @@ sorts alphabetically by artist name and puts "ISO 3166-1 alpha-2" country codes 
 Each `[artist, playcount, countryCode]` entry is placed on a separate line to make diffs easier to digest.
 
 ##### Example output
-
 Filename: `output/artist-area-map/3-merged-artists.json`.
 
 Content:
-
 ```js
 [ [ 'Dream Theater', 769, 'US' ],
   [ 'Lake of Tears', 214, 'SE' ],
@@ -157,9 +136,7 @@ Content:
 ```
 
 ### Scrobble timeline
-
 #### Fetch all scrobbles
-
 ```bash
 $ npm run script:scrobble-timeline:1-fetch-scrobbles -- [2019-02-25] [2019-03-10] [--no-color] [--no-cache]
 #                                                        ^            ^
@@ -169,15 +146,12 @@ $ npm run script:scrobble-timeline:1-fetch-scrobbles -- [2019-02-25] [2019-03-10
 ```
 
 ##### Input prerequisites
-
 None.
 
 ##### Example output
-
 Filename: `output/scrobble-timeline/1-scrobbles/2019-02-25--2019-03-10.json`.
 
 Content:
-
 ```js
 [ { date: '2019-02-25 08:38',
     track: {
@@ -209,17 +183,14 @@ Content:
 ```
 
 #### Merge all fetched scrobbles together
-
 ```bash
 $ npm run script:scrobble-timeline:2-merge-scrobbles -- [--no-color]
 ```
 
 ##### Input prerequisites
-
 Expects input files (`.json`) to be located at `output/scrobble-timeline/1-scrobbles/`.
 
 ##### Example output
-
 Filename: `output/scrobble-timeline/2-merged-scrobbles.json`.
 
 Content: same as from the fetching commands, but everything put into a single chronological collection with playcount values aggregated.
