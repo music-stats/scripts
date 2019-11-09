@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.2.0] - 2019-11-09
+### Added
+#### Artist-area map
+A script that removes unused properties from world map GeoJSON and filters out countries not mentioned in the resulting playcount dataset.
+```bash
+$ npm run script:artist-area-map:4-trim-world-map
+```
+
 ## [1.1.0] - 2019-11-03
 ### Added
 #### Scrobble timeline

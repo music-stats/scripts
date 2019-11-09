@@ -1,1 +1,1 @@
-A folder to cache last.fm API responses.
+A folder for storing cached last.fm API responses.

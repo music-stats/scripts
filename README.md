@@ -20,6 +20,7 @@ deps to consider for the server-side application:
 
 ## APIs, datasets
 ### In use
+- [x] [GeoJSON Regions](https://geojson-maps.ash.ms/) (underlying source: [Natural Earth](http://naturalearthdata.com/))
 - [x] [last.fm](https://www.last.fm/api/intro)
   - [x] [`library.getArtists`](https://www.last.fm/api/show/library.getArtists)
   - [x] [`user.getRecentTracks`](https://www.last.fm/api/show/user.getRecentTracks)
@@ -63,17 +64,17 @@ $ npm run script:artist-area-map:1-fetch-artists -- [50] [--no-color] [--no-cach
 #                                                    number of artists, default is set in the config
 ```
 
-##### Input prerequisites
+##### Input
 Username is set in `src/config.ts`.
 
-##### Example output
+##### Output
 Filename: `output/artist-area-map/1-lastfm-user-library.json`.
 
 Content:
 ```js
 [ { name: 'Dream Theater',
     playcount: 769,
-    mbid: '28503ab7-8bf2-4666-a7bd-2644bfc7cb1d' }, // MusicBrainz id
+    mbid: '28503ab7-8bf2-4666-a7bd-2644bfc7cb1d' }, // MusicBrainz ID
   { name: 'Queen',
     playcount: 757,
     mbid: '420ca290-76c5-41af-999e-564d7c71f1a7' },
@@ -93,13 +94,10 @@ $ npm run script:artist-area-map:2-fetch-artists-areas -- [10] [--no-color] [--n
 #                                                          number of artists, default is set in the config
 ```
 
-##### Input prerequisites
-Expects an output of
-`script:artist-area-map:1-fetch-artists`
-to be located at
-`output/artist-area-map/1-lastfm-user-library.json`.
+##### Input
+An output of `npm run script:artist-area-map:1-fetch-artists`.
 
-##### Example output
+##### Output
 Filename: `output/artist-area-map/2-musicbrainz-artists-areas.json`.
 
 Content:
@@ -116,14 +114,14 @@ Content:
 $ npm run script:artist-area-map:3-merge-artists -- [--no-color]
 ```
 
-##### Input prerequisites
+##### Input
 Expects both input files (`.json`) to be located at `output/artist-area-map/`.
 Blends them together, applies three stages of corrections (see `data/corrections/`),
 sorts alphabetically by artist name and puts "ISO 3166-1 alpha-2" country codes as area names.
 
 Each `[artist, playcount, countryCode]` entry is placed on a separate line to make diffs easier to digest.
 
-##### Example output
+##### Output
 Filename: `output/artist-area-map/3-merged-artists.json`.
 
 Content:
@@ -135,6 +133,20 @@ Content:
   ... ]
 ```
 
+#### Prepare country borders GeoJSON
+* Filters out countries not mentioned in the merged artists dataset.
+* Trims unused properties from the "GeoJSON Regions" dataset.
+```bash
+$ npm run script:artist-area-map:4-trim-world-map -- [--no-color]
+```
+
+##### Input
+* An output of `npm run script:artist-area-map:3-merge-artists`.
+* A GeoJSON file with country borders is located at `input/world.geo.json`.
+
+##### Output
+Filename: `output/artist-area-map/4-world.geo.json`.
+
 ### Scrobble timeline
 #### Fetch all scrobbles
 ```bash
@@ -145,10 +157,10 @@ $ npm run script:scrobble-timeline:1-fetch-scrobbles -- [2019-02-25] [2019-03-10
 #                                                        date from (YYYY-MM-DD), defaults to yesterday
 ```
 
-##### Input prerequisites
+##### Input
 None.
 
-##### Example output
+##### Output
 Filename: `output/scrobble-timeline/1-scrobbles/2019-02-25--2019-03-10.json`.
 
 Content:
@@ -187,10 +199,10 @@ Content:
 $ npm run script:scrobble-timeline:2-merge-scrobbles -- [--no-color]
 ```
 
-##### Input prerequisites
+##### Input
 Expects input files (`.json`) to be located at `output/scrobble-timeline/1-scrobbles/`.
 
-##### Example output
+##### Output
 Filename: `output/scrobble-timeline/2-merged-scrobbles.json`.
 
 Content: same as from the fetching commands, but everything put into a single chronological collection with playcount values aggregated.

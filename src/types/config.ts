@@ -44,6 +44,7 @@ export interface Correction {
 }
 
 interface Script {
+  inputFilePath?: string;
   outputFilePath: string;
 }
 
@@ -69,6 +70,7 @@ export default interface Config {
 
   scripts: {
     artistAreaMap: {
+      trimWorldMap: Script;
       fetchArtist: Script;
       fetchArtistsAreas: Script;
       mergeArtists: MergeArtistsScript;

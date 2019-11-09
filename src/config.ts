@@ -6,6 +6,7 @@ const rootDir = path.resolve(__dirname, '../../');
 const correctionsDir = path.resolve(rootDir, 'data/corrections/');
 const datasetsDir = path.resolve(rootDir, 'data/datasets/');
 const cacheDir = path.resolve(rootDir, 'cache/');
+const inputDir = path.resolve(rootDir, 'input/');
 const outputDir = path.resolve(rootDir, 'output/');
 const artistAreaMapScriptOutputDir = path.resolve(outputDir, 'artist-area-map/');
 const scrobbleTimelineScriptOutputDir = path.resolve(outputDir, 'scrobble-timeline/');
@@ -79,6 +80,11 @@ const config: Config = {
         },
 
         outputFilePath: path.resolve(artistAreaMapScriptOutputDir, '3-merged-artists.json'),
+      },
+
+      trimWorldMap: {
+        inputFilePath: path.resolve(inputDir, 'world.geo.json'),
+        outputFilePath: path.resolve(artistAreaMapScriptOutputDir, '4-world.geo.json'),
       },
     },
 

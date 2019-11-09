@@ -1,1 +1,1 @@
-A folder to cache MusicBrainz API responses.
+A folder for storing cached MusicBrainz API responses.
