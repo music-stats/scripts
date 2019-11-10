@@ -55,6 +55,11 @@ $ npm run build        # compile TypeScript
 $ npm run build:watch  # compile with watch
 ```
 
+## Terminology
+In this repository, locations are called *areas*, not *countries* (like in [music-stats/map](https://github.com/music-stats/map)).
+Even though country codes are used in the resulting `merged-artists` dataset, name *area* was chosen because MusicBrainz
+uses it in their schema - it can represent countries, regions or cities.
+
 ## Scripts
 ### Artist-area map
 #### Fetch top artists for a given last.fm user

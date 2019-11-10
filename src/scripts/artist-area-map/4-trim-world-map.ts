@@ -37,7 +37,7 @@ function transform({mergedArtistList, worldGeoJson}: InputLists): WorldGeoJson {
 function convertAreaFeature(areaGeoJson: AreaGeoJson): AreaGeoJson {
   const {type, properties, geometry} = areaGeoJson;
   const allowedProperties = [
-    'name',
+    'name_long',
     'iso_a2',
   ];
 
