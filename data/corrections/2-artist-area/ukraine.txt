@@ -81,7 +81,6 @@ Straytones
 Strikha-project
 Sunrise
 TaRUTA
-The Cancel Band
 The Doox
 The Glober
 The Hardkiss
@@ -154,6 +153,7 @@ Zombo
 Фіолет
 Хвилини Тисячі Мільйонів
 Христина Соловій
+Ціна Ритму
 Чека
 ЧЕКА
 Юра Самовілов
