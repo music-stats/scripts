@@ -7,7 +7,7 @@ import {
   dateToUnixTimeStamp,
   dateToString,
   dateToEndDayDate,
-} from '../date';
+} from './date';
 
 describe('date utils', () => {
   // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
@@ -47,7 +47,7 @@ describe('date utils', () => {
         constructor() {
           super(dateString);
         }
-      }
+      };
     }
 
     afterEach(() => {
@@ -110,6 +110,6 @@ describe('date utils', () => {
     test('adds 23:59:59 to a given date', () => {
       expect(dateToEndDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-12T20:59:59.000Z');
       expect(dateToEndDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-14T20:59:59.000Z');
-    })
+    });
   });
 });

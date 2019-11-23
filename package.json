@@ -29,12 +29,12 @@
   "devDependencies": {
     "@types/dotenv": "8.2.0",
     "@types/jest": "24.0.23",
-    "@types/node": "12.12.11",
+    "@types/node": "12.12.12",
     "@types/ramda": "0.26.36",
     "husky": "3.1.0",
     "jest": "24.9.0",
     "npm-check": "5.9.0",
-    "ts-jest": "24.1.0",
+    "ts-jest": "24.2.0",
     "tslint": "5.20.1",
     "tslint-eslint-rules": "5.4.0",
     "typescript": "3.7.2"
