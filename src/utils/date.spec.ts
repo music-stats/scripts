@@ -83,8 +83,8 @@ describe('date utils', () => {
 
   describe('unixTimeStampToDateTimeString()', () => {
     test('converts a given Unix Time (seconds) to string as "YYYY-MM-DD HH:MM"', () => {
-      expect(unixTimeStampToDateTimeString(1565122865)).toBe('2019-08-06 23:21');
-      expect(unixTimeStampToDateTimeString(1562385900)).toBe('2019-07-06 07:05');
+      expect(unixTimeStampToDateTimeString(1565122865)).toBe('2019-08-06 22:21');
+      expect(unixTimeStampToDateTimeString(1562385900)).toBe('2019-07-06 06:05');
     });
   });
 
@@ -107,9 +107,9 @@ describe('date utils', () => {
   });
 
   describe('dateToEndDayDate()', () => {
-    test('adds 23:59:59 to a given date', () => {
-      expect(dateToEndDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-12T20:59:59.000Z');
-      expect(dateToEndDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-14T20:59:59.000Z');
+    test('adds 23:59:59 (UTC) to a given date', () => {
+      expect(dateToEndDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-12T21:59:59.000Z');
+      expect(dateToEndDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-14T21:59:59.000Z');
     });
   });
 });

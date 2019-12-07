@@ -13,9 +13,10 @@
     "lint": "tslint ./src/**/*.ts",
     "test": "NODE_PATH=./src jest",
     "clean:dist": "rm -rf ./dist/*",
-    "clean:cache:lastfm": "rm -rf ./cache/lastfm/*.json",
-    "clean:cache:musicbrainz": "rm -rf ./cache/musicbrainz/*.json",
-    "clean:cache:all": "rm -rf ./cache/**/*.json",
+    "clean:cache:lastfm": "rm -f ./cache/lastfm/*.json",
+    "clean:cache:musicbrainz": "rm -f ./cache/musicbrainz/*.json",
+    "clean:cache:all": "rm -f ./cache/**/*.json",
+    "clean:output:scrobble-timeline": "rm -f ./output/scrobble-timeline/**/*.json",
     "prebuild": "npm run clean:dist",
     "build": "tsc",
     "build:watch": "tsc -w",
@@ -29,15 +30,15 @@
   "devDependencies": {
     "@types/dotenv": "8.2.0",
     "@types/jest": "24.0.23",
-    "@types/node": "12.12.12",
-    "@types/ramda": "0.26.36",
+    "@types/node": "12.12.14",
+    "@types/ramda": "0.26.37",
     "husky": "3.1.0",
     "jest": "24.9.0",
     "npm-check": "5.9.0",
     "ts-jest": "24.2.0",
     "tslint": "5.20.1",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.7.2"
+    "typescript": "3.7.3"
   },
   "dependencies": {
     "axios": "0.19.0",

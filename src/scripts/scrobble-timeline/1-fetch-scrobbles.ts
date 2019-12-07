@@ -64,23 +64,20 @@ function transform(rawRecentTrackList: LastfmRecentTrack[]): Scrobble[] {
   );
 }
 
-function convert({name, mbid, date, album, artist}: LastfmRecentTrack): Scrobble {
+function convert({name, date, album, artist}: LastfmRecentTrack): Scrobble {
   return {
     date: unixTimeStampToDateTimeString(parseInt(date.uts, 10)),
     track: {
       name,
       playcount: null,
-      mbid,
     },
     album: {
       name: album['#text'],
       playcount: null,
-      mbid: album.mbid,
     },
     artist: {
       name: artist['#text'],
       playcount: null,
-      mbid: artist.mbid,
     },
   };
 }

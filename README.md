@@ -173,30 +173,24 @@ Content:
 [ { date: '2019-02-25 08:38',
     track: {
       name: 'Re-Align',
-      playcount: 6,
-      mbid: '0a2da65c-dcff-3837-beb7-0dc1697870ee' },
+      playcount: 6 },
     album: {
       name: 'Good Times, Bad Times - Ten Years of Godsmack',
-      playcount: 28,
-      mbid: 'a54420cf-e577-4607-976e-2d5eee07daa7' },
+      playcount: 28 },
     artist: {
       name: 'Godsmack',
-      playcount: 205,
-      mbid: 'ac2d1c91-3667-46aa-9fe7-170ca7fce9e2' } },
+      playcount: 205 } },
   ...
   { date: '2019-03-10 18:13',
     track: {
       name: 'Handle This',
-      playcount: 2,
-      mbid: '1974be37-81b4-3d2c-aed3-1a7c51847513' },
+      playcount: 2 },
     album: {
       name: 'All Killer, No Filler',
-      playcount: 33,
-      mbid: null },
+      playcount: 33 },
     artist: {
       name: 'Sum 41',
-      playcount: 33,
-      mbid: 'f2eef649-a6d5-4114-afba-e50ab26254d2' } ]
+      playcount: 33 } ]
 ```
 
 #### Merge all fetched scrobbles together
