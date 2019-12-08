@@ -13,6 +13,7 @@ Columbus
 Dallas
 Denver
 Detroit
+Fullerton
 Groveland
 Houston
 Illinois

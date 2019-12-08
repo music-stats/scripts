@@ -9,6 +9,6 @@ Nightmare
 Nim
 Pelican Fanclub
 Saito
-SPOOL スプール
+Spool
 The Firewood Project
 Tokyo String Quartet

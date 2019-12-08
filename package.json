@@ -17,6 +17,8 @@
     "clean:cache:musicbrainz": "rm -f ./cache/musicbrainz/*.json",
     "clean:cache:all": "rm -f ./cache/**/*.json",
     "clean:output:scrobble-timeline": "rm -f ./output/scrobble-timeline/**/*.json",
+    "copy:output:artist-area-map": "cp ./output/artist-area-map/3-merged-artists.json ../map/data/artists.json",
+    "copy:output:scrobble-timeline": "cp ./output/scrobble-timeline/2-merged-scrobbles.json ../timeline/data/scrobbles.json",
     "prebuild": "npm run clean:dist",
     "build": "tsc",
     "build:watch": "tsc -w",
