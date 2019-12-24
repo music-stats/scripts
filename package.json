@@ -27,12 +27,13 @@
     "script:artist-area-map:3-merge-artists": "./bin/artist-area-map/3-merge-artists.sh",
     "script:artist-area-map:4-trim-world-map": "./bin/artist-area-map/4-trim-world-map.sh",
     "script:scrobble-timeline:1-fetch-scrobbles": "./bin/scrobble-timeline/1-fetch-scrobbles.sh",
-    "script:scrobble-timeline:2-merge-scrobbles": "./bin/scrobble-timeline/2-merge-scrobbles.sh"
+    "script:scrobble-timeline:2-merge-scrobbles": "./bin/scrobble-timeline/2-merge-scrobbles.sh",
+    "script:scrobble-timeline:3-group-artists-by-genres": "./bin/scrobble-timeline/3-group-artists-by-genres.sh"
   },
   "devDependencies": {
     "@types/dotenv": "8.2.0",
-    "@types/jest": "24.0.23",
-    "@types/node": "12.12.17",
+    "@types/jest": "24.0.24",
+    "@types/node": "13.1.0",
     "@types/ramda": "0.26.38",
     "husky": "3.1.0",
     "jest": "24.9.0",
@@ -40,7 +41,7 @@
     "ts-jest": "24.2.0",
     "tslint": "5.20.1",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.7.3"
+    "typescript": "3.7.4"
   },
   "dependencies": {
     "axios": "0.19.0",

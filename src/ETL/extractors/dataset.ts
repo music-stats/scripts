@@ -4,7 +4,7 @@ import {Artist as LastfmArtist} from 'src/types/lastfm';
 import {PackedArtist} from 'src/types/artist';
 
 import config from 'src/config';
-import {readJsonFile} from 'src/utils/file';
+import {readJsonFile, readTxtMultilineFolder, TxtMultilineFolderContent} from 'src/utils/file';
 
 export function loadCountryCodeDataset(): Promise<CountryCodeDataset> {
   return readJsonFile(config.datasets.countryCodes.filePath);
@@ -20,4 +20,8 @@ export function loadLastfmArtistList(): Promise<LastfmArtist[]> {
 
 export function loadMergedArtistList(): Promise<PackedArtist[]> {
   return readJsonFile(config.scripts.artistAreaMap.mergeArtists.outputFilePath);
+}
+
+export function loadArtistListByGenreDataset(): Promise<TxtMultilineFolderContent> {
+  return readTxtMultilineFolder('');
 }
