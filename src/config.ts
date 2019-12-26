@@ -96,6 +96,11 @@ const config: Config = {
       mergeScrobbles: {
         outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '2-merged-scrobbles.json'),
       },
+
+      groupArtistsByGenres: {
+        inputFilePath: path.resolve(datasetsDir, 'artist-genre/'),
+        outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '3-artists-by-genres.json'),
+      },
     },
   },
 

@@ -17,3 +17,7 @@ export interface MergedArtist {
 
 // [name, playcount, countryCode]
 export type PackedArtist = [string, number, string];
+
+export interface ArtistListByGenre {
+  [genre: string]: string[];
+}

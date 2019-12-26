@@ -23,5 +23,5 @@ export function loadMergedArtistList(): Promise<PackedArtist[]> {
 }
 
 export function loadArtistListByGenreDataset(): Promise<TxtMultilineFolderContent> {
-  return readTxtMultilineFolder('');
+  return readTxtMultilineFolder(config.scripts.scrobbleTimeline.groupArtistsByGenres.inputFilePath);
 }
