@@ -32,19 +32,19 @@
   },
   "devDependencies": {
     "@types/dotenv": "8.2.0",
-    "@types/jest": "24.0.24",
-    "@types/node": "13.1.0",
-    "@types/ramda": "0.26.38",
-    "husky": "3.1.0",
+    "@types/jest": "24.0.25",
+    "@types/node": "13.1.6",
+    "@types/ramda": "0.26.39",
+    "husky": "4.0.7",
     "jest": "24.9.0",
     "npm-check": "5.9.0",
-    "ts-jest": "24.2.0",
+    "ts-jest": "24.3.0",
     "tslint": "5.20.1",
     "tslint-eslint-rules": "5.4.0",
     "typescript": "3.7.4"
   },
   "dependencies": {
-    "axios": "0.19.0",
+    "axios": "0.19.1",
     "colors": "1.4.0",
     "dotenv": "8.2.0",
     "ramda": "0.26.1"
