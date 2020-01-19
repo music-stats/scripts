@@ -1,6 +1,6 @@
 {
   "name": "music-stats-scripts",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "SHOULD become an API gateway between different front-ends and various data providers, currently a set of ETL scripts",
   "author": "Oleksii Markhovskyi",
   "license": "MIT",
@@ -32,16 +32,16 @@
   },
   "devDependencies": {
     "@types/dotenv": "8.2.0",
-    "@types/jest": "24.0.25",
-    "@types/node": "13.1.6",
+    "@types/jest": "24.9.0",
+    "@types/node": "13.1.8",
     "@types/ramda": "0.26.39",
-    "husky": "4.0.7",
+    "husky": "4.0.10",
     "jest": "24.9.0",
     "npm-check": "5.9.0",
     "ts-jest": "24.3.0",
     "tslint": "5.20.1",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   },
   "dependencies": {
     "axios": "0.19.1",

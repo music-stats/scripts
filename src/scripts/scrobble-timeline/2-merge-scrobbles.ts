@@ -3,6 +3,8 @@ import {ScrobbleList} from 'src/types/scrobble';
 import config from 'src/config';
 import {readAllJsonFiles, writeFile} from 'src/utils/file';
 import log, {proxyLogLength} from 'src/utils/log';
+
+import {loadCorrection} from 'src/ETL/extractors/correction';
 import {aggregatePlaycounts} from 'src/ETL/transformers/aggregate';
 import merge from 'src/ETL/transformers/merge-scrobbles';
 
@@ -10,8 +12,12 @@ function extract(): Promise<ScrobbleList[]> {
   return readAllJsonFiles<ScrobbleList>(config.scripts.scrobbleTimeline.fetchScrobbles.outputFilePath);
 }
 
-function transform(scrobbleListList: ScrobbleList[]): ScrobbleList {
-  return aggregatePlaycounts(merge(scrobbleListList));
+function transform(scrobbleListList: ScrobbleList[]): Promise<ScrobbleList> {
+  return loadCorrection(config.scripts.scrobbleTimeline.fetchScrobbles.corrections.artistName)
+    .then((artistNameCorrection) => aggregatePlaycounts(
+      merge(scrobbleListList),
+      artistNameCorrection,
+    ));
 }
 
 function load(scrobbleList: ScrobbleList): Promise<ScrobbleList> {

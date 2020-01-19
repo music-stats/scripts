@@ -56,6 +56,12 @@ interface MergeArtistsScript extends Script {
   };
 }
 
+interface FetchScrobblesScript extends Script {
+  corrections: {
+    artistName: Correction;
+  };
+}
+
 interface Dataset {
   filePath: string;
 }
@@ -77,7 +83,7 @@ export default interface Config {
     };
 
     scrobbleTimeline: {
-      fetchScrobbles: Script;
+      fetchScrobbles: FetchScrobblesScript;
       mergeScrobbles: Script;
       groupArtistsByGenres: Script;
     };

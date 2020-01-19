@@ -23,15 +23,14 @@ export function getYesterdayDateString(): string {
 }
 
 export function unixTimeStampToDateTimeString(uts: number): string {
-  const date = new Date();
-
-  date.setTime(uts * 1000);
-
-  return dateToDateTimeString(date);
+  return (new Date(uts * 1000 - getTimezoneOffsetMs()))
+    .toISOString()
+    .slice(0, 16)
+    .replace('T', ' ');
 }
 
-export function dateToUnixTimeStamp(date: Date) {
-  return Math.round(date.getTime() / 1000);
+export function dateToUnixTimeStamp(date: Date): number {
+  return Math.round((date.getTime() - getTimezoneOffsetMs()) / 1000);
 }
 
 export function dateToString(date: Date): string {
@@ -42,18 +41,8 @@ export function dateToString(date: Date): string {
   ].join('-');
 }
 
-function dateToTimeString(date: Date): string {
-  return [
-    leftPadDatePart(date.getHours()),
-    leftPadDatePart(date.getMinutes()),
-  ].join(':');
-}
-
-function dateToDateTimeString(date: Date): string {
-  return [
-    dateToString(date),
-    dateToTimeString(date),
-  ].join(' ');
+function getTimezoneOffsetMs(): number {
+  return (new Date()).getTimezoneOffset() * 60 * 1000;
 }
 
 function leftPadDatePart(value: number): string {

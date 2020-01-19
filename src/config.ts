@@ -90,6 +90,13 @@ const config: Config = {
 
     scrobbleTimeline: {
       fetchScrobbles: {
+        corrections: {
+          artistName: {
+            dataType: CorrectionDataType.JsonFile,
+            filePath: path.resolve(correctionsDir, '1-artist-name.json'),
+          },
+        },
+
         outputFilePath: path.resolve(scrobbleTimelineScriptOutputDir, '1-scrobbles/', '<from>--<to>.json'),
       },
 

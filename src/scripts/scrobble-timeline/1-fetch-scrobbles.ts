@@ -1,4 +1,4 @@
-import {Scrobble} from 'src/types/scrobble';
+import {Scrobble, ScrobbleList} from 'src/types/scrobble';
 import {RecentTrack as LastfmRecentTrack} from 'src/types/lastfm';
 
 import config from 'src/config';
@@ -14,7 +14,9 @@ import {
   getYesterdayDateString,
   unixTimeStampToDateTimeString,
 } from 'src/utils/date';
+
 import {fetchRecentTracks} from 'src/ETL/extractors/lastfm';
+import {loadCorrection} from 'src/ETL/extractors/correction';
 import {aggregatePlaycounts} from 'src/ETL/transformers/aggregate';
 
 const argv = process.argv.slice(2);
@@ -54,14 +56,15 @@ function extract(): Promise<LastfmRecentTrack[]> {
   );
 }
 
-function transform(rawRecentTrackList: LastfmRecentTrack[]): Scrobble[] {
-  // @todo: apply corrections before aggregating playcount sums
-  return aggregatePlaycounts(
-    rawRecentTrackList
-      .filter(({date}) => date) // now playing track doesn't have "date"
-      .reverse() // scrobbles originally come in reversed chronological order
-      .map(convert),
-  );
+function transform(rawRecentTrackList: LastfmRecentTrack[]): Promise<ScrobbleList> {
+  return loadCorrection(config.scripts.scrobbleTimeline.fetchScrobbles.corrections.artistName)
+    .then((artistNameCorrection) => aggregatePlaycounts(
+      rawRecentTrackList
+        .filter(({date}) => date) // now playing track doesn't have "date"
+        .reverse() // scrobbles originally come in reversed chronological order
+        .map(convert),
+      artistNameCorrection,
+    ));
 }
 
 function convert({name, date, album, artist}: LastfmRecentTrack): Scrobble {
@@ -82,7 +85,7 @@ function convert({name, date, album, artist}: LastfmRecentTrack): Scrobble {
   };
 }
 
-function load(scrobbleList: Scrobble[]): Promise<Scrobble[]> {
+function load(scrobbleList: ScrobbleList): Promise<ScrobbleList> {
   const outputFilePath = config.scripts.scrobbleTimeline.fetchScrobbles.outputFilePath.replace(
     '<from>--<to>',
     `${from}--${to}`,
