@@ -83,17 +83,19 @@ describe('date utils', () => {
 
   describe('unixTimeStampToDateTimeString()', () => {
     test('converts a given Unix Time (seconds) to string as "YYYY-MM-DD HH:MM"', () => {
-      expect(unixTimeStampToDateTimeString(1565122865)).toBe('2019-08-06 22:21');
-      expect(unixTimeStampToDateTimeString(1562385900)).toBe('2019-07-06 06:05');
+      expect(unixTimeStampToDateTimeString(1565122860)).toBe('2019-08-06 21:21');
+      expect(unixTimeStampToDateTimeString(1562385900)).toBe('2019-07-06 05:05');
     });
   });
 
   describe('dateToUnixTimeStamp()', () => {
     test('converts a given date to Unix Time (seconds)', () => {
-      expect(dateToUnixTimeStamp(new Date('2008'))).toBe(1199145600);
-      expect(dateToUnixTimeStamp(new Date('2010-02'))).toBe(1264982400);
-      expect(dateToUnixTimeStamp(new Date('1950-03-12'))).toBe(-625104000);
-      expect(dateToUnixTimeStamp(new Date('2049-09-02'))).toBe(2514153600);
+      expect(dateToUnixTimeStamp(new Date('2008'))).toBe(1199149200);
+      expect(dateToUnixTimeStamp(new Date('2010-02'))).toBe(1264986000);
+      expect(dateToUnixTimeStamp(new Date('1950-03-12'))).toBe(-625100400);
+      expect(dateToUnixTimeStamp(new Date('2019-08-06 21:21'))).toBe(1565122860);
+      expect(dateToUnixTimeStamp(new Date('2019-07-06 05:05'))).toBe(1562385900);
+      expect(dateToUnixTimeStamp(new Date('2049-09-02'))).toBe(2514157200);
     });
   });
 

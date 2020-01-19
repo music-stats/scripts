@@ -25,7 +25,7 @@ function convertTxtMultilineFolderContentToCorrection(folderContent: TxtMultilin
   return correction;
 }
 
-function loadCorrection({dataType, filePath}: Correction): Promise<AnyParsedCorrection> {
+export function loadCorrection({dataType, filePath}: Correction): Promise<AnyParsedCorrection> {
   if (dataType === CorrectionDataType.JsonFile) {
     return readJsonFile(filePath);
   }

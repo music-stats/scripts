@@ -1,16 +1,21 @@
 import {Scrobble, ScrobbleList} from 'src/types/scrobble';
+import {ArtistNameCorrection} from 'src/types/correction';
 
 // expects "scrobbleList" to contains scrobbles in chronological order
-export function aggregatePlaycounts(scrobbleList: ScrobbleList): ScrobbleList {
+export function aggregatePlaycounts(
+  scrobbleList: ScrobbleList,
+  artistNameCorrection: ArtistNameCorrection,
+): ScrobbleList {
   const accumulator: {[key: string]: number} = {};
   const updatePlaycountValues = (scrobble: Scrobble): Scrobble => {
     const {track, album, artist} = scrobble;
+    const artistNameCorrected = artistNameCorrection[artist.name] || artist.name;
 
     // prefixes are added to avoid collisions,
     // e.g. same track and album names for the same artist
-    const trackKey = `track: ${artist.name} - ${track.name}`;
-    const albumKey = `album: ${artist.name} - ${album.name}`;
-    const artistKey = `artist: ${artist.name}`;
+    const trackKey = `track: ${artistNameCorrected} - ${track.name}`;
+    const albumKey = `album: ${artistNameCorrected} - ${album.name}`;
+    const artistKey = `artist: ${artistNameCorrected}`;
 
     [trackKey, albumKey, artistKey].forEach((key) => {
       accumulator[key] = accumulator[key]
@@ -29,7 +34,7 @@ export function aggregatePlaycounts(scrobbleList: ScrobbleList): ScrobbleList {
         playcount: accumulator[albumKey],
       },
       artist: {
-        ...artist,
+        name: artistNameCorrected,
         playcount: accumulator[artistKey],
       },
     };
