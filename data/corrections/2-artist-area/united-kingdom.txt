@@ -12,6 +12,7 @@ Fen
 Gaps
 Genesis
 HÆLOS
+Idles
 Iron Maiden
 Kamaal Williams
 Lake Turner
@@ -23,6 +24,7 @@ Mogwai
 Muse
 Nick Walters
 Oasis
+Palace
 Paradise Lost
 Pendragon
 Placebo

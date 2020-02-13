@@ -11,7 +11,7 @@ export function delay<T>(promise: (...args: any[]) => Promise<T>, wait: number, 
 
 type EnquableFunc<T> = () => Promise<T>;
 
-export function sequence<T>(funcs: Array<EnquableFunc<T>>): Promise<T[]> {
+export function sequence<T>(funcs: EnquableFunc<T>[]): Promise<T[]> {
   const results: T[] = [];
   const pushResult: ((result: T) => void) = (result: T) => results.push(result);
   const enqueueFuncs = (queue: Promise<void>, func: EnquableFunc<T>) => queue.then(() => func().then(pushResult));

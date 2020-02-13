@@ -32,22 +32,22 @@
   },
   "devDependencies": {
     "@types/dotenv": "8.2.0",
-    "@types/jest": "24.9.0",
-    "@types/node": "13.1.8",
-    "@types/ramda": "0.26.39",
-    "husky": "4.0.10",
-    "jest": "24.9.0",
+    "@types/jest": "25.1.2",
+    "@types/node": "13.7.1",
+    "@types/ramda": "0.26.41",
+    "husky": "4.2.3",
+    "jest": "25.1.0",
     "npm-check": "5.9.0",
-    "ts-jest": "24.3.0",
-    "tslint": "5.20.1",
+    "ts-jest": "25.2.0",
+    "tslint": "6.0.0",
     "tslint-eslint-rules": "5.4.0",
     "typescript": "3.7.5"
   },
   "dependencies": {
-    "axios": "0.19.1",
+    "axios": "0.19.2",
     "colors": "1.4.0",
     "dotenv": "8.2.0",
-    "ramda": "0.26.1"
+    "ramda": "0.27.0"
   },
   "husky": {
     "hooks": {
