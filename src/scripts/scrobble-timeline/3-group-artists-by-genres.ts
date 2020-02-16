@@ -31,7 +31,7 @@ function load(artistListByGenre: ArtistListByGenre): Promise<ArtistListByGenre> 
   log();
   log(`writing to "${outputFilePath}"`);
 
-  return writeFile(outputFilePath, artistListByGenre);
+  return writeFile(outputFilePath, artistListByGenre, 0);
 }
 
 extract()

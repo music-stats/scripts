@@ -1,7 +1,7 @@
 {
   "name": "music-stats-scripts",
   "version": "1.3.0",
-  "description": "SHOULD become an API gateway between different front-ends and various data providers, currently a set of ETL scripts",
+  "description": "a set of ETL scripts for fetching and cleaning music-related data",
   "author": "Oleksii Markhovskyi",
   "license": "MIT",
   "repository": {
@@ -17,8 +17,6 @@
     "clean:cache:musicbrainz": "rm -f ./cache/musicbrainz/*.json",
     "clean:cache:all": "rm -f ./cache/**/*.json",
     "clean:output:scrobble-timeline": "rm -f ./output/scrobble-timeline/**/*.json",
-    "copy:output:artist-area-map": "cp ./output/artist-area-map/3-merged-artists.json ../map/data/artists.json",
-    "copy:output:scrobble-timeline": "cp ./output/scrobble-timeline/2-merged-scrobbles.json ../timeline/data/scrobbles.json && cp ./output/scrobble-timeline/3-artists-by-genres.json ../timeline/data/artists-by-genres.json",
     "prebuild": "npm run clean:dist",
     "build": "tsc",
     "build:watch": "tsc -w",
@@ -26,22 +24,24 @@
     "script:artist-area-map:2-fetch-artists-areas": "./bin/artist-area-map/2-fetch-artists-areas.sh",
     "script:artist-area-map:3-merge-artists": "./bin/artist-area-map/3-merge-artists.sh",
     "script:artist-area-map:4-trim-world-map": "./bin/artist-area-map/4-trim-world-map.sh",
+    "script:artist-area-map:5-copy-output": "./bin/artist-area-map/5-copy-output.sh",
     "script:scrobble-timeline:1-fetch-scrobbles": "./bin/scrobble-timeline/1-fetch-scrobbles.sh",
     "script:scrobble-timeline:2-merge-scrobbles": "./bin/scrobble-timeline/2-merge-scrobbles.sh",
-    "script:scrobble-timeline:3-group-artists-by-genres": "./bin/scrobble-timeline/3-group-artists-by-genres.sh"
+    "script:scrobble-timeline:3-group-artists-by-genres": "./bin/scrobble-timeline/3-group-artists-by-genres.sh",
+    "script:scrobble-timeline:4-copy-output": "./bin/scrobble-timeline/4-copy-output.sh"
   },
   "devDependencies": {
     "@types/dotenv": "8.2.0",
-    "@types/jest": "25.1.2",
-    "@types/node": "13.7.1",
-    "@types/ramda": "0.26.41",
+    "@types/jest": "25.1.4",
+    "@types/node": "13.9.0",
+    "@types/ramda": "0.26.43",
     "husky": "4.2.3",
     "jest": "25.1.0",
-    "npm-check": "5.9.0",
-    "ts-jest": "25.2.0",
+    "npm-check": "5.9.2",
+    "ts-jest": "25.2.1",
     "tslint": "6.0.0",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.7.5"
+    "typescript": "3.8.3"
   },
   "dependencies": {
     "axios": "0.19.2",

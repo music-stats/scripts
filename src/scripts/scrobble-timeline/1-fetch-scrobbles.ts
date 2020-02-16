@@ -96,7 +96,7 @@ function load(compressedScrobbleList: CompressedScrobbleList): Promise<Compresse
   log();
   log(`writing to "${outputFilePath}"`);
 
-  return writeFile(outputFilePath, compressedScrobbleList);
+  return writeFile(outputFilePath, compressedScrobbleList, 0);
 }
 
 extract()

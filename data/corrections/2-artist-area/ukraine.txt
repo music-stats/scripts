@@ -58,7 +58,6 @@ Mute
 Myroslav Levytsky
 NAILERY
 Natolich
-Novi
 nug
 oh, deer!
 Onuka
@@ -72,9 +71,11 @@ Polygrim
 Pulatova
 Robots Against Entropy
 Satory Seine
+Sevensis
 Sex Blender
 Shiva the destructor
 Sidus Atrum
+Signals Feed The Void
 Sinoptik
 Skinhate
 Sleep in Heads
@@ -92,6 +93,7 @@ The Hardkiss
 The HYPNOTUNEZ
 THE MAUNT
 The Nietzsche
+The Orchestra Of Mirrored Reflections
 The Sunset Survival
 The Wicker Man
 Tik Tu
@@ -104,7 +106,9 @@ Yuko
 Zbaraski
 ZITKANI
 Zombo
+Zwyntar
 Анна
+Ансамбль "Кобза"
 Ансамбль Арніка
 Ансамбль Водограй
 Ансамбль Візерунки Шляхів
@@ -114,6 +118,7 @@ Zombo
 вагоновожатые
 Василь Зінкевич
 Веремій
+Вокальний Дует Два Кольори
 Вій
 Галактика
 Гапочка
@@ -135,7 +140,7 @@ Zombo
 Мaco Слобожанський
 Майкл Щур
 Мотор'ролла
-МРф
+МРФ
 Н.Три
 Надія Пащенко
 Назарій Яремчук
@@ -144,16 +149,17 @@ Zombo
 Ніна Злобіна
 Ніна Матвієнко
 Один в Каное
+Ольга Щербакова
 Оля и Монстр
 Очеретяний Кіт
 паліндром
-ПИРЯТИН
 Пирятин
 ПНД
 Покруч
 Полинове Поле
 Росава
 Сонцесвіт
+Софія Ротару
 Тарас Чубай
 ТНМК
 Тулим
@@ -164,7 +170,6 @@ Zombo
 Христина Соловій
 Ціна Ритму
 Чека
-ЧЕКА
 Юра Самовілов
 Юрій Рожков
 Ґорґішелі
