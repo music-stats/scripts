@@ -1,4 +1,4 @@
-import {Scrobble, ScrobbleList} from 'src/types/scrobble';
+import {Scrobble, CompressedScrobbleList} from 'src/types/scrobble';
 import {RecentTrack as LastfmRecentTrack} from 'src/types/lastfm';
 
 import config from 'src/config';
@@ -17,6 +17,7 @@ import {
 
 import {fetchRecentTracks} from 'src/ETL/extractors/lastfm';
 import {loadCorrection} from 'src/ETL/extractors/correction';
+import {compress} from 'src/ETL/transformers/compress';
 import {aggregatePlaycounts} from 'src/ETL/transformers/aggregate';
 
 const argv = process.argv.slice(2);
@@ -56,15 +57,16 @@ function extract(): Promise<LastfmRecentTrack[]> {
   );
 }
 
-function transform(rawRecentTrackList: LastfmRecentTrack[]): Promise<ScrobbleList> {
+function transform(rawRecentTrackList: LastfmRecentTrack[]): Promise<CompressedScrobbleList> {
   return loadCorrection(config.scripts.scrobbleTimeline.fetchScrobbles.corrections.artistName)
     .then((artistNameCorrection) => aggregatePlaycounts(
       rawRecentTrackList
-        .filter(({date}) => date) // now playing track doesn't have "date"
+        .filter(({date}) => date) // "now playing" track doesn't have a "date"
         .reverse() // scrobbles originally come in reversed chronological order
         .map(convert),
       artistNameCorrection,
-    ));
+    ))
+    .then((scrobbleList) => scrobbleList.map(compress));
 }
 
 function convert({name, date, album, artist}: LastfmRecentTrack): Scrobble {
@@ -85,7 +87,7 @@ function convert({name, date, album, artist}: LastfmRecentTrack): Scrobble {
   };
 }
 
-function load(scrobbleList: ScrobbleList): Promise<ScrobbleList> {
+function load(compressedScrobbleList: CompressedScrobbleList): Promise<CompressedScrobbleList> {
   const outputFilePath = config.scripts.scrobbleTimeline.fetchScrobbles.outputFilePath.replace(
     '<from>--<to>',
     `${from}--${to}`,
@@ -94,7 +96,7 @@ function load(scrobbleList: ScrobbleList): Promise<ScrobbleList> {
   log();
   log(`writing to "${outputFilePath}"`);
 
-  return writeFile(outputFilePath, scrobbleList);
+  return writeFile(outputFilePath, compressedScrobbleList);
 }
 
 extract()

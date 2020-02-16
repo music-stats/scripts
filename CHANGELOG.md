@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+#### Scrobble timeline
+* [breaking] Dataset format update: fetched scrobbles list is now an array of arrays (`[[date, trackName, trackPlaycount, albumName, albumPlaycount, artistName, artistPlaycount], ...]`), not an array of objects.
 
 ## [1.3.0] - 2020-01-19
 ### Added
@@ -36,7 +39,7 @@ $ npm run script:scrobble-timeline:2-merge-scrobbles
 ## [1.0.0] - 2019-10-13
 ### Changed
 #### Artist-area map
-* Dataset format update: `[[artist, playcount, countryCode], ...]` (with "ISO 3166-1 alpha-2" country codes).
+* [breaking] Dataset format update: `[[artist, playcount, countryCode], ...]` (with "ISO 3166-1 alpha-2" country codes).
 
 ## [0.0.1] - 2019-08-23
 ### Added

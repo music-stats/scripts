@@ -30,7 +30,7 @@ const config: Config = {
         perPage: 200,
       },
       cache: {
-        ttl: 60 * 60 * 1000, // 1 hour
+        ttl: 7 * 24 * 60 * 60 * 1000, // 1 week
         dir: path.resolve(cacheDir, 'lastfm/'),
       },
     },

@@ -170,27 +170,14 @@ Filename: `output/scrobble-timeline/1-scrobbles/2019-02-25--2019-03-10.json`.
 
 Content:
 ```js
-[ { date: '2019-02-25 08:38',
-    track: {
-      name: 'Re-Align',
-      playcount: 6 },
-    album: {
-      name: 'Good Times, Bad Times - Ten Years of Godsmack',
-      playcount: 28 },
-    artist: {
-      name: 'Godsmack',
-      playcount: 205 } },
-  ...
-  { date: '2019-03-10 18:13',
-    track: {
-      name: 'Handle This',
-      playcount: 2 },
-    album: {
-      name: 'All Killer, No Filler',
-      playcount: 33 },
-    artist: {
-      name: 'Sum 41',
-      playcount: 33 } ]
+[ [ '2019-03-10 18:13',       // date
+    'Handle This',            // track name
+    2,                        // track playcount
+    'All Killer, No Filler',  // album name
+    28,                       // album playcount
+    'Sum 41',                 // artist name
+    33 ],                     // artist playcount
+  ... ]
 ```
 
 #### Merge all fetched scrobbles together

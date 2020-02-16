@@ -11,3 +11,15 @@ export interface Scrobble {
 }
 
 export type ScrobbleList = Scrobble[];
+
+export type CompressedScrobble = [
+  string, // date
+  string, // track name
+  number, // track playcount
+  string, // album name
+  number, // album playcount
+  string, // artist name
+  number, // artist playcount
+];
+
+export type CompressedScrobbleList = CompressedScrobble[];
