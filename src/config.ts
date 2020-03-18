@@ -47,7 +47,7 @@ const config: Config = {
         countDefault: 10,
       },
       cache: {
-        ttl: 365 * 24 * 60 * 60 * 1000, // 1 year
+        ttl: 2 * 365 * 24 * 60 * 60 * 1000, // 2 years
         dir: path.resolve(cacheDir, 'musicbrainz/'),
       },
     },
