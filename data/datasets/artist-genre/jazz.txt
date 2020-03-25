@@ -1,4 +1,5 @@
 Al Di Meola
+Alfa Mist
 Allan Holdsworth
 Art Blakey & The Jazz Messengers
 Austin Peralta
@@ -15,10 +16,12 @@ Charles Mingus
 Charlie Parker
 Chick Corea
 Clifford Brown
+Coleman Hawkins
 Colin Stetson
 Dave Weckl Band
 Daymé Arocena
 Dennis Adu
+Dexter Gordon
 Duke Ellington
 Ella Fitzgerald
 Eric Reed
@@ -39,6 +42,7 @@ Keith Jarrett
 Kyle Eastwood
 Lionel Loueke
 Louis Armstrong
+Mai Leisz
 Miles Davis
 Myroslav Levytsky
 New York Jazz Lounge
@@ -51,7 +55,7 @@ Organic Noises
 Oscar Peterson
 Pat Metheny Group
 Pokaz Trio
-R+R=Now
+R+R=NOW
 Robohands
 Scott Hamilton
 Stan Getz
