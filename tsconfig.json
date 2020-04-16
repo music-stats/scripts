@@ -3,6 +3,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es6",
+    "lib": ["es2017"],
     "removeComments": false,
     "sourceMap": true,
     "noImplicitAny": true,
@@ -10,9 +11,6 @@
     "noUnusedParameters": true,
     "strictBindCallApply": true,
     "outDir": "dist/src",
-    "lib": [
-      "es2017"
-    ],
     "baseUrl": ".",
     "paths": {
       "src/*": ["./src/*"]
