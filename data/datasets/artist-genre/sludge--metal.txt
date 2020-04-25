@@ -3,6 +3,7 @@ Baroness
 Black Cobra
 Burst
 Cult of Luna
+Herder
 Intronaut
 Isis
 Kasu Weri
@@ -11,6 +12,7 @@ Mastodon
 Minsk
 Nadja
 Neurosis
+nug
 Pelican
 Rosetta
 Soom
