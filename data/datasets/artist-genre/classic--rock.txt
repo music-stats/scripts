@@ -4,6 +4,7 @@ Alice Cooper
 Black Sabbath
 Blue Öyster Cult
 Boston
+Coverdale/Page
 Creedence Clearwater Revival
 David Lee Roth
 Deep Purple
@@ -12,6 +13,7 @@ Dio
 Dire Straits
 Eagles
 Electric Light Orchestra
+Extreme
 Fleetwood Mac
 Frank Zappa
 Glenn Hughes
@@ -29,6 +31,7 @@ Mark Knopfler
 Mr. Big
 Neil Young
 Ozzy Osbourne
+Paul McCartney
 Phil Lynott
 Pink Cream 69
 Pink Floyd

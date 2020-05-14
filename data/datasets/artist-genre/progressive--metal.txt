@@ -4,7 +4,6 @@ Akphaezya
 Animals as Leaders
 Between the Buried and Me
 Blotted Science
-Buckethead
 Canvas Solaris
 Circus Maximus
 Cloudkicker
@@ -55,6 +54,7 @@ Smothering Silence
 Soen
 TesseracT
 Textures
+The Contortionist
 The Human Abstract
 The Ocean
 The Old Dead Tree
