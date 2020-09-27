@@ -1,6 +1,7 @@
 (DOLCH)
 40 Watt Sun
 Affasia
+Agalloch
 Amorphis
 Angellore
 Brume
@@ -16,6 +17,7 @@ Mournful Gust
 My Dying Bride
 Novembers Doom
 Novembre
+Pallbearer
 Paradise Lost
 Red Moon Architect
 Saturnus
