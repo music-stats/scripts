@@ -4,11 +4,13 @@
 58918012
 8x8
 Alexjazz
+Art-In
 BLOOMS CORDA
 Bluedance
 Bojevilla
 BoomBox
 Braii
+Brunettes Shoot Blondes
 Cape Cod
 Chillera
 Dakh Daughters
@@ -27,6 +29,7 @@ Flёur
 Fontaliza
 FREEL
 Gray Angels
+HASPYD
 Haydamaky
 Holy Blood
 Hudaki Village Band
@@ -60,6 +63,7 @@ Morton
 Motanka
 Mute
 Myroslav Levytsky
+Mørkt Tre
 NAILERY
 Natolich
 nug
@@ -67,6 +71,7 @@ octopus kraft
 oh, deer!
 Omana
 Onuka
+OoZe
 Orpha
 Palmo X
 panivalkova
@@ -75,6 +80,7 @@ Pianoбой
 Pokaz Trio
 Polygrim
 Pulatova
+Pušča
 Ragapop
 René Maheu
 Robots Against Entropy
@@ -110,12 +116,15 @@ The Unsleeping
 The Wicker Man
 Tik Tu
 torban
+US Orchestra
 Velikhan
 Volver Stone
 Vovk
+We Don't Eat Humans
 Yah
 Yeyo.
 Yuko
+Zavoloka
 Zbaraski
 ZITKANI
 Zombo
@@ -127,6 +136,7 @@ Zwyntar
 Ансамбль Візерунки Шляхів
 Ансамбль Калина
 Божичі
+Брати Гадюкіни
 Був'є
 вагоновожатые
 Василь Зінкевич
@@ -153,6 +163,7 @@ Zwyntar
 Лінія Маннергейма
 Мaco Слобожанський
 Майкл Щур
+Мантра Керуака
 Мотор'ролла
 МРФ
 Н.Три
@@ -168,6 +179,7 @@ Zwyntar
 Очеретяний Кіт
 паліндром
 Пирятин
+Плач Єремії
 ПНД
 Покруч
 Полинове Поле

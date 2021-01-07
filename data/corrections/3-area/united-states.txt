@@ -1,4 +1,5 @@
 Allentown
+Arizona
 Atlanta
 Austin
 Baltimore
@@ -20,12 +21,14 @@ Houston
 Illinois
 Lawrence
 Lexington
+Long Island
 Los Angeles
 Louisiana
 Lynchburg
 Maryland
 Minneapolis
 Nashville
+New Mexico
 New York
 Newbern
 North Carolina
@@ -35,6 +38,7 @@ Olympia
 Phoenix
 Portland
 Raleigh
+Ramona
 San Antonio
 San Francisco
 Seattle
@@ -42,3 +46,4 @@ Silver Spring
 St Helens
 Stanley
 Tampa
+Washington, D.C.

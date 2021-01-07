@@ -64,9 +64,9 @@ uses it in their schema - it can represent countries, regions or cities.
 ### Artist-area map
 #### Fetch top artists for a given last.fm user
 ```bash
-$ npm run script:artist-area-map:1-fetch-artists -- [50] [--no-color] [--no-cache]
-#                                                    ^
-#                                                    number of artists, default is set in the config
+$ npm run script:artist-area-map:1-fetch-artists [50] [--no-color] [--no-cache]
+#                                                 ^
+#                                                 number of artists, default is set in the config
 ```
 
 ##### Input
@@ -94,9 +94,9 @@ Content:
 
 #### Fetch areas for a given set of artists
 ```bash
-$ npm run script:artist-area-map:2-fetch-artists-areas -- [10] [--no-color] [--no-cache]
-#                                                          ^
-#                                                          number of artists, default is set in the config
+$ npm run script:artist-area-map:2-fetch-artists-areas [10] [--no-color] [--no-cache]
+#                                                       ^
+#                                                       number of artists, default is set in the config
 ```
 
 ##### Input
@@ -116,7 +116,7 @@ Content:
 
 #### Merge results of two scripts above
 ```bash
-$ npm run script:artist-area-map:3-merge-artists -- [--no-color]
+$ npm run script:artist-area-map:3-merge-artists [--no-color]
 ```
 
 ##### Input
@@ -142,7 +142,7 @@ Content:
 * Filters out countries not mentioned in the merged artists dataset.
 * Trims unused properties from the "GeoJSON Regions" dataset.
 ```bash
-$ npm run script:artist-area-map:4-trim-world-map -- [--no-color]
+$ npm run script:artist-area-map:4-trim-world-map [--no-color]
 ```
 
 ##### Input
@@ -155,11 +155,11 @@ Filename: `output/artist-area-map/4-world.geo.json`.
 ### Scrobble timeline
 #### Fetch all scrobbles
 ```bash
-$ npm run script:scrobble-timeline:1-fetch-scrobbles -- [2019-02-25] [2019-03-10] [--no-color] [--no-cache]
-#                                                        ^            ^
-#                                                        |            date to (YYYY-MM-DD), defaults to today
-#                                                        |
-#                                                        date from (YYYY-MM-DD), defaults to yesterday
+$ npm run script:scrobble-timeline:1-fetch-scrobbles [2019-02-25] [2019-03-10] [--no-color] [--no-cache]
+#                                                     ^            ^
+#                                                     |            date to (YYYY-MM-DD), defaults to today
+#                                                     |
+#                                                     date from (YYYY-MM-DD), defaults to yesterday
 ```
 
 ##### Input
@@ -182,7 +182,7 @@ Content:
 
 #### Merge all fetched scrobbles together
 ```bash
-$ npm run script:scrobble-timeline:2-merge-scrobbles -- [--no-color]
+$ npm run script:scrobble-timeline:2-merge-scrobbles [--no-color]
 ```
 
 ##### Input
