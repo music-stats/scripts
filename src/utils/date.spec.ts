@@ -3,9 +3,10 @@ import {
   compareDateStrings,
   getTodayDateString,
   getYesterdayDateString,
-  unixTimeStampToDateTimeString,
-  dateToUnixTimeStamp,
+  utcUtsToDateTimeString,
+  dateToUtcUts,
   dateToString,
+  dateToStartDayDate,
   dateToEndDayDate,
 } from './date';
 
@@ -81,21 +82,21 @@ describe('date utils', () => {
     });
   });
 
-  describe('unixTimeStampToDateTimeString()', () => {
+  describe('utcUtsToDateTimeString()', () => {
     test('converts a given Unix Time (seconds) to string as "YYYY-MM-DD HH:MM"', () => {
-      expect(unixTimeStampToDateTimeString(1565122860)).toBe('2019-08-06 21:21');
-      expect(unixTimeStampToDateTimeString(1562385900)).toBe('2019-07-06 05:05');
+      expect(utcUtsToDateTimeString(1565122860)).toBe('2019-08-06 22:21');
+      expect(utcUtsToDateTimeString(1562385900)).toBe('2019-07-06 06:05');
     });
   });
 
-  describe('dateToUnixTimeStamp()', () => {
+  describe('dateToUtcUts()', () => {
     test('converts a given date to Unix Time (seconds)', () => {
-      expect(dateToUnixTimeStamp(new Date('2008'))).toBe(1199149200);
-      expect(dateToUnixTimeStamp(new Date('2010-02'))).toBe(1264986000);
-      expect(dateToUnixTimeStamp(new Date('1950-03-12'))).toBe(-625100400);
-      expect(dateToUnixTimeStamp(new Date('2019-08-06 21:21'))).toBe(1565122860);
-      expect(dateToUnixTimeStamp(new Date('2019-07-06 05:05'))).toBe(1562385900);
-      expect(dateToUnixTimeStamp(new Date('2049-09-02'))).toBe(2514157200);
+      expect(dateToUtcUts(new Date('2008'))).toBe(1199145600);
+      expect(dateToUtcUts(new Date('2010-02'))).toBe(1264982400);
+      expect(dateToUtcUts(new Date('1950-03-12'))).toBe(-625104000);
+      expect(dateToUtcUts(new Date('2019-08-06 21:21'))).toBe(1565115660);
+      expect(dateToUtcUts(new Date('2019-07-06 05:05'))).toBe(1562378700);
+      expect(dateToUtcUts(new Date('2049-09-02'))).toBe(2514153600);
     });
   });
 
@@ -108,10 +109,17 @@ describe('date utils', () => {
     });
   });
 
+  describe('dateToStartDayDate()', () => {
+    test('adds 23:59:59 (UTC) to a given date', () => {
+      expect(dateToStartDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-11T21:00:00.000Z');
+      expect(dateToStartDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-13T21:00:00.000Z');
+    });
+  });
+
   describe('dateToEndDayDate()', () => {
     test('adds 23:59:59 (UTC) to a given date', () => {
-      expect(dateToEndDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-12T21:59:59.000Z');
-      expect(dateToEndDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-14T21:59:59.000Z');
+      expect(dateToEndDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-12T20:59:59.000Z');
+      expect(dateToEndDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-14T20:59:59.000Z');
     });
   });
 });

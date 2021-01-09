@@ -22,15 +22,18 @@ export function getYesterdayDateString(): string {
   return dateToString(date);
 }
 
-export function unixTimeStampToDateTimeString(uts: number): string {
+export function utcUtsToDateTimeString(uts: number): string {
+  // resulting date is expected to be in local time and input values comes in UTC,
+  // therefore a timezone offset is compensated (its negative for European time)
   return (new Date(uts * 1000 - getTimezoneOffsetMs()))
     .toISOString()
     .slice(0, 16)
     .replace('T', ' ');
 }
 
-export function dateToUnixTimeStamp(date: Date): number {
-  return Math.round((date.getTime() - getTimezoneOffsetMs()) / 1000);
+export function dateToUtcUts(date: Date): number {
+  // no need to apply a timezone offset, since ".getTime()" already returns milliseconds in UTC
+  return Math.round((date.getTime()) / 1000);
 }
 
 export function dateToString(date: Date): string {
@@ -51,6 +54,12 @@ function leftPadDatePart(value: number): string {
   }
 
   return value.toString();
+}
+
+export function dateToStartDayDate(date: Date): Date {
+  date.setHours(0, 0, 0);
+
+  return date;
 }
 
 export function dateToEndDayDate(date: Date): Date {

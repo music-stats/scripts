@@ -1,6 +1,6 @@
 {
   "name": "music-stats-scripts",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "a set of ETL scripts for fetching and cleaning music-related data",
   "author": "Oleksii Markhovskyi",
   "license": "MIT",

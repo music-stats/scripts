@@ -7,12 +7,13 @@ import log, {proxyLogLength} from 'src/utils/log';
 import {
   isDateStringValid,
   compareDateStrings,
-  dateToUnixTimeStamp,
+  dateToUtcUts,
   dateToString,
+  dateToStartDayDate,
   dateToEndDayDate,
   getTodayDateString,
   getYesterdayDateString,
-  unixTimeStampToDateTimeString,
+  utcUtsToDateTimeString,
 } from 'src/utils/date';
 
 import {fetchRecentTracks} from 'src/ETL/extractors/lastfm';
@@ -51,8 +52,8 @@ function extract(): Promise<LastfmRecentTrack[]> {
 
   return fetchRecentTracks(
     config.connectors.lastfm.username,
-    dateToUnixTimeStamp(new Date(from)),
-    dateToUnixTimeStamp(dateToEndDayDate(new Date(to))),
+    dateToUtcUts(dateToStartDayDate(new Date(from))),
+    dateToUtcUts(dateToEndDayDate(new Date(to))),
     toBypassCache,
   );
 }
@@ -71,7 +72,7 @@ function transform(rawRecentTrackList: LastfmRecentTrack[]): Promise<CompressedS
 
 function convert({name, date, album, artist}: LastfmRecentTrack): Scrobble {
   return {
-    date: unixTimeStampToDateTimeString(parseInt(date.uts, 10)),
+    date: utcUtsToDateTimeString(parseInt(date.uts, 10)),
     track: {
       name,
       playcount: null,
