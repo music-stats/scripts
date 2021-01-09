@@ -26,6 +26,7 @@
     "script:artist-area-map:4-trim-world-map": "./bin/artist-area-map/4-trim-world-map.sh",
     "script:artist-area-map:5-copy-output": "./bin/artist-area-map/5-copy-output.sh",
     "script:scrobble-timeline:1-fetch-scrobbles": "./bin/scrobble-timeline/1-fetch-scrobbles.sh",
+    "script:scrobble-timeline:1-1-fetch-all-scrobbles-by-years": "./bin/scrobble-timeline/1-1-fetch-all-scrobbles-by-years.sh",
     "script:scrobble-timeline:2-merge-scrobbles": "./bin/scrobble-timeline/2-merge-scrobbles.sh",
     "script:scrobble-timeline:3-group-artists-by-genres": "./bin/scrobble-timeline/3-group-artists-by-genres.sh",
     "script:scrobble-timeline:4-copy-output": "./bin/scrobble-timeline/4-copy-output.sh"

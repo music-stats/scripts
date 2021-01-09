@@ -12,7 +12,7 @@ const artistAreaMapScriptOutputDir = path.resolve(outputDir, 'artist-area-map/')
 const scrobbleTimelineScriptOutputDir = path.resolve(outputDir, 'scrobble-timeline/');
 
 const config: Config = {
-  userAgent: 'music-stats/0.0.0 (https://github.com/music-stats/scripts/)',
+  userAgent: 'music-stats/1.3.0 (https://github.com/music-stats/scripts/)',
 
   connectors: {
     lastfm: {
