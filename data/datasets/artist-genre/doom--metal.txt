@@ -1,7 +1,6 @@
 (DOLCH)
 40 Watt Sun
 Affasia
-Agalloch
 Amorphis
 Angellore
 Brume
@@ -12,6 +11,7 @@ Forest of Shadows
 Godthrymm
 Green Carnation
 Katatonia
+Konvent
 Lake of Tears
 Mournful Gust
 My Dying Bride

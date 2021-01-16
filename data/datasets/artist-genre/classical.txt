@@ -36,6 +36,7 @@ Ludwig van Beethoven
 Luigi Boccherini
 Maurice Ravel
 Muzio Clementi
+Myroslav Skoryk
 Otto Totland
 Ralph Vaughan Williams
 Richard Strauss
@@ -43,6 +44,7 @@ Richard Wagner
 Robert Schumann
 The Three Tenors
 Tomaso Giovanni Albinoni
+Valentin Silvestrov
 Vladimir Ashkenazy
 Vladimir Horowitz
 Wolfgang Amadeus Mozart

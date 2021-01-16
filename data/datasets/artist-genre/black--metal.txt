@@ -30,6 +30,7 @@ Satyricon
 Selvans
 Sidus Atrum
 Summoning
+svrm
 Unreqvited
 Venom
 Véhémence
