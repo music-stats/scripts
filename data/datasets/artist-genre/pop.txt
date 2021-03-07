@@ -3,6 +3,7 @@ ABBA
 Adele
 Alanis Morissette
 Amalie Bruun
+Brigitte Bardot
 Bruno Pelletier
 Charlotte Gainsbourg
 Daniel Lavoie
@@ -28,3 +29,5 @@ The Hardkiss
 The Police
 whenyoung
 Ylvis
+Ольга Щербакова
+Софія Ротару

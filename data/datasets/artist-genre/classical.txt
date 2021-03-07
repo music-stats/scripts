@@ -6,6 +6,7 @@ Arthur Rubinstein
 Bernard Herrmann
 Camille Saint-Saëns
 Carl Czerny
+Carl Maria von Weber
 Claude Debussy
 Domenico Scarlatti
 Edvard Grieg
@@ -18,6 +19,7 @@ Frédéric Chopin
 Gabriel Fauré
 Georg Friedrich Händel
 Georg Philipp Telemann
+Gioacchino Rossini
 Giuseppe Verdi
 Gustav Holst
 Hector Berlioz

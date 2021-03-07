@@ -4,6 +4,7 @@ alt-J
 Arcade Fire
 Artem Bemba
 Balthazar
+Black Rebel Motorcycle Club
 Bombay Bicycle Club
 Bright Eyes
 Brunettes Shoot Blondes
@@ -20,13 +21,17 @@ Gabriel Bruce
 Gardens & Villa
 Half Moon Run
 Hitsujibungaku
+Horse Jumper of Love
 Interpol
 Joshua and the Ruins
 Kakkmaddafakka
+Kiteflighter
 Latexfauna
 Local Natives
 Manchester Orchestra
 MASS OF THE FERMENTING DREGS
+Mineral
+Motorpsycho
 NAILERY
 Nastyona
 Neutral Milk Hotel
@@ -42,6 +47,8 @@ Radiohead
 Red House Painters
 Robert Levon Been
 Saint Motel
+Seahaven
+Slow Mass
 Snail Mail
 Tame Impala
 Tanukichan
@@ -53,11 +60,11 @@ The Killers
 The National
 The Neighbourhood
 The War on Drugs
-The White Stripes
 Tijuana Panthers
 Tik Tu
 tricot
 Unknown Mortal Orchestra
+Unrest
 Vivienne Mort
 Warhaus
 White Lies
@@ -65,8 +72,8 @@ Wild Palms
 Wolf Parade
 Xiu Xiu
 Yah
+Zfeelz
 Гапочка
-Крихітка
 Легендарные Пластилиновые Ноги
 Оркестр Че
 Ті, Що Падають Вгору
