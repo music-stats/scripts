@@ -1,4 +1,5 @@
 Ali Farka Touré
+Baśnie Zebrane
 Casa Ukrania
 Corvus Corax
 Elane
@@ -11,23 +12,21 @@ Kaunan
 Kyiv Ethno Trio
 Michael Alpert
 Omnia
+Sangre de Muerdago
 Shye Ben Tzur
 Strikha-project
 TaRUTA
 The Deep Dark Woods
+The Olllam
 torban
 US Orchestra
 Vuraj
 ZITKANI
 Árstíðir
 Żywiołak
-Ансамбль "Кобза"
-Ансамбль Арніка
-Ансамбль Водограй
-Ансамбль Візерунки Шляхів
-Ансамбль Калина
 Божичі
 Василь Зінкевич
+Вокальний Дует Два Кольори
 Дахабраха
 Лідія Відаш
 Надія Пащенко
@@ -36,3 +35,5 @@ ZITKANI
 Ніна Матвієнко
 Очеретяний Кіт
 Стары Ольса
+Тріо "Маренич"
+Юрій Рожков

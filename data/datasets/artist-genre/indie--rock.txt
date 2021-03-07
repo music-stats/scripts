@@ -1,9 +1,12 @@
 5 vymir
 8x8
 alt-J
+American Football
 Arcade Fire
 Artem Bemba
 Balthazar
+Big Thief
+Black Rebel Motorcycle Club
 Bombay Bicycle Club
 Bright Eyes
 Brunettes Shoot Blondes
@@ -11,6 +14,7 @@ Chillera
 Cloud Nothings
 CRX
 Death Cab for Cutie
+Dinosaur Jr.
 Editors
 Elbow
 Esthetic Education
@@ -20,13 +24,17 @@ Gabriel Bruce
 Gardens & Villa
 Half Moon Run
 Hitsujibungaku
+Horse Jumper of Love
 Interpol
 Joshua and the Ruins
 Kakkmaddafakka
+Kiteflighter
 Latexfauna
 Local Natives
 Manchester Orchestra
 MASS OF THE FERMENTING DREGS
+Mineral
+Motorpsycho
 NAILERY
 Nastyona
 Neutral Milk Hotel
@@ -35,13 +43,14 @@ Nothing But Thieves
 P.S. Eliot
 Palace
 Pelican Fanclub
-Peter Bjorn and John
 Pianoбой
 Quruli
 Radiohead
 Red House Painters
 Robert Levon Been
 Saint Motel
+Seahaven
+Slow Mass
 Snail Mail
 Tame Impala
 Tanukichan
@@ -52,12 +61,13 @@ The Firewood Project
 The Killers
 The National
 The Neighbourhood
+The Receiving End of Sirens
 The War on Drugs
-The White Stripes
 Tijuana Panthers
 Tik Tu
 tricot
 Unknown Mortal Orchestra
+Unrest
 Vivienne Mort
 Warhaus
 White Lies
@@ -65,8 +75,8 @@ Wild Palms
 Wolf Parade
 Xiu Xiu
 Yah
+Zfeelz
 Гапочка
-Крихітка
 Легендарные Пластилиновые Ноги
 Оркестр Че
 Ті, Що Падають Вгору

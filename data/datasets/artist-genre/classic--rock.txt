@@ -4,7 +4,9 @@ Alice Cooper
 Black Sabbath
 Blue Öyster Cult
 Boston
+Catch the Rainbow
 Coverdale/Page
+Cozy Powell
 Creedence Clearwater Revival
 David Lee Roth
 Deep Purple
@@ -14,10 +16,13 @@ Dire Straits
 Eagles
 Electric Light Orchestra
 Extreme
+Fanny
 Fleetwood Mac
 Frank Zappa
+George Harrison
 Glenn Hughes
 Guns N' Roses
+Hawkwind
 Hällas
 Izzy Stradlin
 Jimi Hendrix
@@ -28,6 +33,7 @@ Kingdom Come
 Kiss
 Led Zeppelin
 Mark Knopfler
+Mesmerized
 Mr. Big
 Neil Young
 Ozzy Osbourne
@@ -41,12 +47,16 @@ Rainbow
 Scorpions
 Simon & Garfunkel
 Slade
+Smith/Kotzen
 Styx
+The Allman Brothers Band
 The Animals
 The Beatles
 The Doors
 The Rolling Stones
-The Velvet Underground
+The Who
+The Winery Dogs
 Thin Lizzy
 Uli Jon Roth
 Whitesnake
+Wings
