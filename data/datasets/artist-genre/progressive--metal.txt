@@ -3,6 +3,7 @@ Aghora
 Akphaezya
 Animals as Leaders
 Arch/Matheos
+Aveya
 Between the Buried and Me
 Bird Problems
 Blotted Science
@@ -10,11 +11,13 @@ Canvas Solaris
 Circus Maximus
 Cloudkicker
 Communic
+Covet
 Cthulhu Rise
 Cynic
 Dark Suns
 Destiny Potato
 Devin Townsend
+Devin Townsend Project
 Dominici
 Dream Theater
 Ephel Duath
@@ -22,13 +25,14 @@ Fates Warning
 Genghis Tron
 Gordian Knot
 Haken
-In the Woods...
+Igorrr
 Intensus
 James LaBrie
 Joncofy
 Leprous
 Liquid Tension Experiment
 Liquid Trio Experiment
+Lucio Manca
 Meshuggah
 Mestís
 Mike Portnoy
@@ -49,17 +53,17 @@ Rishloo
 Robots Against Entropy
 Scale the Summit
 Shadow Gallery
-Sikth
+SikTh
 Sithu Aye
 Sleep in Heads
 Soen
 Sons of Apollo
+Sordid Pink
 TesseracT
 Textures
 The Contortionist
 The Human Abstract
 The Ocean
-The Old Dead Tree
 The Omnific
 The Safety Fire
 Thomas Giles
@@ -67,6 +71,7 @@ Tool
 Twelve Foot Ninja
 Unexpect
 Vildhjarta
+Wheel
 Xerath
 öOoOoOoOoOo
 Ørkenkjøtt

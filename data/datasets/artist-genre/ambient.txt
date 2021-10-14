@@ -4,7 +4,6 @@ Aidan Baker
 Angelo Badalamenti
 Bing & Ruth
 Boards of Canada
-Chroma Key
 David Arkenstone
 David Wenngren
 Dustin O'Halloran
@@ -14,6 +13,7 @@ Federico Albanese
 Floating Points
 Gabriela Parra
 Grouper
+Gyða Valtýsdóttir
 Harold Budd
 Hauschka
 Hilary Hahn
@@ -45,12 +45,15 @@ Raphael Weinroth-Browne
 Richard Barbieri
 Robert Rich
 Runah
+Sam Wilkes
 Sarah Neufeld
+Skúli Sverrisson
 Stars of the Lid
 Stefano Guzzetti
 Tor Lundvall
 Tycho
 Vancouver Sleep Clinic
 Wickerbird
+Zeitkratzer
 Zymosis
 Ólafur Arnalds

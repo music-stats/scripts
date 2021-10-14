@@ -1,9 +1,10 @@
+2equals2
 5 vymir
+8LIS5
 8x8
 alt-J
 American Football
 Arcade Fire
-Artem Bemba
 Balthazar
 Big Thief
 Black Rebel Motorcycle Club
@@ -14,6 +15,7 @@ Chillera
 Cloud Nothings
 CRX
 Death Cab for Cutie
+Deep Sea Diver
 Dinosaur Jr.
 Editors
 Elbow
@@ -25,15 +27,18 @@ Gardens & Villa
 Half Moon Run
 Hitsujibungaku
 Horse Jumper of Love
+Hungry Ghost
 Interpol
 Joshua and the Ruins
 Kakkmaddafakka
 Kiteflighter
 Latexfauna
 Local Natives
+Lucy Dacus
 Manchester Orchestra
 MASS OF THE FERMENTING DREGS
 Mineral
+Mitski
 Motorpsycho
 NAILERY
 Nastyona
@@ -42,7 +47,7 @@ Nim
 Nothing But Thieves
 P.S. Eliot
 Palace
-Pelican Fanclub
+PELICAN FANCLUB
 Pianoбой
 Quruli
 Radiohead
@@ -62,6 +67,7 @@ The Killers
 The National
 The Neighbourhood
 The Receiving End of Sirens
+The Smile
 The War on Drugs
 Tijuana Panthers
 Tik Tu
