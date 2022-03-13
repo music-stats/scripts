@@ -1,4 +1,3 @@
-#!/usr/local/bin/bash
 npm run script:scrobble-timeline:1-fetch-scrobbles 2012-01-01 2012-12-31
 npm run script:scrobble-timeline:1-fetch-scrobbles 2013-01-01 2013-12-31
 npm run script:scrobble-timeline:1-fetch-scrobbles 2014-01-01 2014-12-31

@@ -1,4 +1,3 @@
-#!/usr/local/bin/bash
 cp ./output/scrobble-timeline/1-scrobbles/2012-01-01--2012-12-31.json ../timeline/data/years/2012.json
 cp ./output/scrobble-timeline/1-scrobbles/2013-01-01--2013-12-31.json ../timeline/data/years/2013.json
 cp ./output/scrobble-timeline/1-scrobbles/2014-01-01--2014-12-31.json ../timeline/data/years/2014.json
