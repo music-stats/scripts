@@ -1,7 +1,6 @@
 (DOLCH)
 40 Watt Sun
 Affasia
-Amorphis
 Angellore
 Brume
 Doom:VS
@@ -30,8 +29,10 @@ Smothering Silence
 Smoulder
 Spacemessiah
 Spirit Adrift
+SubRosa
 Sunnata
 Swallow the Sun
 The Old Dead Tree
+Windhand
 Woods of Ypres
 Year of the Cobra

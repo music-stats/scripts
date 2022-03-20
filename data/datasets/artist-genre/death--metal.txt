@@ -1,3 +1,4 @@
+Behemoth
 Belphegor
 Blood Incantation
 Bolt Thrower
@@ -13,4 +14,5 @@ Obituary
 Obrij
 Pyrrhon
 SCHIZOGEN
+Sisyphean
 Umbra Vitae

@@ -1,4 +1,5 @@
 Ali Farka Touré
+Árstíðir
 Baśnie Zebrane
 Casa Ukrania
 Corvus Corax
@@ -25,7 +26,6 @@ torban
 US Orchestra
 Vuraj
 ZITKANI
-Árstíðir
 Żywiołak
 Божичі
 Василь Зінкевич
@@ -39,4 +39,5 @@ ZITKANI
 Очеретяний Кіт
 Стары Ольса
 Тріо "Маренич"
+Хорея Козацька
 Юрій Рожков
