@@ -17,6 +17,7 @@ Frames
 Gates
 God Is an Astronaut
 Godspeed You! Black Emperor
+Goodbye Earth
 Grayceon
 Have a Nice Life
 Hinterland
@@ -66,4 +67,5 @@ Via Luna
 Way Station
 We Don't Eat Humans
 Wrath
+XX.XX
 Yndi Halda

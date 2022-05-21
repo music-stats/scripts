@@ -10,6 +10,7 @@ Bluedance
 Bojevilla
 BoomBox
 Braii
+Break The Habit
 Brunettes Shoot Blondes
 Cape Cod
 Chillera
@@ -20,7 +21,6 @@ Dennis Adu
 Disdjointed
 Dysphoria
 DZ'OB
-Dz'ob
 Etwas Unders
 F.R.A.M.
 Farinhate
@@ -58,12 +58,12 @@ MegamasS
 Merva
 Molfa
 Monotonne
+Mørkt Tre
 Morphine Suffering
 Morton
 Motanka
 Mute
 Myroslav Levytsky
-Mørkt Tre
 NAILERY
 Natolich
 nug
@@ -113,6 +113,7 @@ The Sunset Survival
 The Unsleeping
 The Wicker Man
 Tik Tu
+Time Of Defeats
 torban
 US Orchestra
 Velikhan
@@ -130,8 +131,8 @@ Zwyntar
 Анна
 Ансамбль "Кобза"
 Ансамбль Арніка
-Ансамбль Водограй
 Ансамбль Візерунки Шляхів
+Ансамбль Водограй
 Ансамбль Калина
 Божичі
 Брати Гадюкіни
@@ -139,10 +140,11 @@ Zwyntar
 вагоновожатые
 Василь Зінкевич
 Веремій
-Вокальний Дует Два Кольори
 Вій
+Вокальний Дует Два Кольори
 Галактика
 Гапочка
+Ґорґішелі
 Гурт [О]
 Дахабраха
 Димна Суміш
@@ -156,9 +158,9 @@ Zwyntar
 Катя Chilly
 Кашляючий Ед
 Легендарные Пластилиновые Ноги
-Люсі
 Лідія Відаш
 Лінія Маннергейма
+Люсі
 Мaco Слобожанський
 Майкл Щур
 Мантра Керуака
@@ -185,11 +187,11 @@ Zwyntar
 Сонцесвіт
 Софія Ротару
 Тарас Чубай
-ТНМК
-Тулим
 Ті, Що Падають Вгору
 Тільки Світло
 Тінь Сонця
+ТНМК
+Тулим
 Фіолет
 Хвилини Тисячі Мільйонів
 Христина Соловій
@@ -197,4 +199,3 @@ Zwyntar
 Чека
 Юра Самовілов
 Юрій Рожков
-Ґорґішелі
