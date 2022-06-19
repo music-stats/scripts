@@ -2,14 +2,16 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "target": "es6",
-    "lib": ["es2017"],
+    "lib": ["esnext"],
     "removeComments": false,
     "sourceMap": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictBindCallApply": true,
+    "strictNullChecks": true,
     "outDir": "dist/src",
     "baseUrl": ".",
     "paths": {

@@ -114,7 +114,7 @@ const config: Config = {
   datasets: {
     countryCodes: {
       filePath: path.resolve(datasetsDir, 'country-codes-iso-3166-1-alpha-2.json'),
-    }
+    },
   },
 };
 

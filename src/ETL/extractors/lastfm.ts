@@ -1,7 +1,7 @@
 import * as querystring from 'querystring';
 import {times, take} from 'ramda';
 import axios, {AxiosResponse} from 'axios';
-import * as dotenv from 'dotenv';
+import 'dotenv/config';
 
 import {
   LibraryResponseData,
@@ -16,7 +16,7 @@ import {sequence} from 'src/utils/promise';
 import log, {logRequest} from 'src/utils/log';
 import {retrieveResponseDataCache, storeResponseDataCache} from 'src/utils/cache';
 
-const {parsed: {LASTFM_API_KEY}} = dotenv.config();
+const {LASTFM_API_KEY} = process.env;
 
 export function buildApiUrl(method: string, params = {}): string {
   const defaultParams = {
@@ -58,8 +58,8 @@ function fetchPage<ResponseData, SpecificParams>(
     return axios.get(url, {headers});
   }
 
-  function retrieveLastfmLibraryCache(): Promise<ResponseData> {
-    return retrieveResponseDataCache<ResponseData>(url, config.connectors.lastfm.cache);
+  function retrieveLastfmLibraryCache(): Promise<ResponseData | null> {
+    return retrieveResponseDataCache<ResponseData | null>(url, config.connectors.lastfm.cache);
   }
 
   function storeLastfmLibraryCache(response: AxiosResponse<ResponseData>): Promise<AxiosResponse<ResponseData>> {
@@ -123,7 +123,7 @@ export function fetchLibraryArtists(
     ),
     pagesCount,
   );
-  const cutExtraArtists = (rawArtistList: Artist[]) => take(artistsCount, rawArtistList);
+  const cutExtraArtists = (rawArtistList: Artist[]): Artist[] => take(artistsCount, rawArtistList);
 
   log(`pages: ${pagesCount}`);
 
@@ -143,7 +143,7 @@ export function fetchRecentTracks(
     from,
     to,
   } as RecentTracksRequestSpecificParams;
-  const fetchFirstPage = fetchPage.bind<null, any, Promise<RecentTracksResponseData>>(
+  const fetchFirstPage = fetchPage.bind<null, unknown, Promise<RecentTracksResponseData>>(
     null,
     'user.getrecenttracks',
     username,
@@ -153,7 +153,7 @@ export function fetchRecentTracks(
     toBypassCache,
     dateRange,
   );
-  const fetchRemainingPages = (firstPageData: RecentTracksResponseData) => {
+  const fetchRemainingPages = (firstPageData: RecentTracksResponseData): Promise<RecentTracksResponseData[]> => {
     const pagesCount = Math.min(
       parseInt(firstPageData.recenttracks['@attr'].totalPages, 10),
       maxPageNumber,
@@ -167,7 +167,7 @@ export function fetchRecentTracks(
     }
 
     return sequence(times(
-      (pageNumber) => fetchPage.bind<null, any, Promise<RecentTracksResponseData>>(
+      (pageNumber) => fetchPage.bind<null, unknown, Promise<RecentTracksResponseData>>(
         null,
         'user.getrecenttracks',
         username,

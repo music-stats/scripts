@@ -5,14 +5,14 @@ import {ConnectorCache as ConnectorCacheConfig} from 'src/types/config';
 import {readJsonFile, writeFile} from 'src/utils/file';
 import log from 'src/utils/log';
 
-function constructCacheFilePath(dir: string, url: string, format: string = 'json'): string {
+function constructCacheFilePath(dir: string, url: string, format = 'json'): string {
   return path.resolve(dir, `${encodeURIComponent(url)}.${format}`);
 }
 
 export function retrieveResponseDataCache<ResponseData>(
   url: string,
   connectorCacheConfig: ConnectorCacheConfig,
-): Promise<ResponseData> {
+): Promise<ResponseData | null> {
   const filePath = constructCacheFilePath(connectorCacheConfig.dir, url);
 
   return new Promise((resolve, reject) => {
@@ -35,7 +35,7 @@ export function retrieveResponseDataCache<ResponseData>(
         log(`
           response cache is outdated:
           - file: ${filePath}
-          - mtime: ${stats.mtime}
+          - mtime: ${stats.mtime.toString()}
           - ttl: ${connectorCacheConfig.ttl}ms
         `);
         resolve(null);

@@ -32,7 +32,7 @@ function convert({name, playcount, mbid}: LastfmArtist): Artist {
   return {
     name,
     playcount: Number(playcount),
-    mbid: mbid || null,
+    mbid,
   };
 }
 

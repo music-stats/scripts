@@ -14,7 +14,7 @@ function readTxtMultilineFile(filePath: string): Promise<TxtMultilineFileContent
 
 export function readJsonFile<DataType>(filePath: string): Promise<DataType> {
   return fs.promises.readFile(filePath, 'utf8')
-    .then(JSON.parse);
+    .then(JSON.parse) as Promise<DataType>;
 }
 
 export function readAllJsonFiles<DataType>(filePathPattern: string): Promise<DataType[]> {
@@ -29,14 +29,14 @@ export function readAllJsonFiles<DataType>(filePathPattern: string): Promise<Dat
 export function writeFile<DataType>(
   filePath: string,
   data: DataType,
-  jsonStringifySpace: number = 2,
-  converter: (value: string) => string = null,
+  jsonStringifySpace = 2,
+  converter?: (value: string) => string,
 ): Promise<DataType> {
   const dataString = JSON.stringify(data, null, jsonStringifySpace);
 
   return fs.promises.writeFile(
     filePath,
-    converter ? converter(dataString) : dataString
+    converter ? converter(dataString) : dataString,
   )
     .then(() => data);
 }

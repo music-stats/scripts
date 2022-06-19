@@ -124,7 +124,7 @@ function getArtistArea(
   // @todo: add a check against registered areas (countries), to highlight unknown cities/regions
   warn(`area not found: ${artist} (${playcount})`);
 
-  return null;
+  return '';
 }
 
 export function convertToSortedList(

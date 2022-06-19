@@ -1,9 +1,7 @@
 export interface AreaGeoJson {
   type: 'Feature';
-  properties: {
-    [key: string]: any;
-  };
-  geometry: {};
+  properties: Record<string, unknown>;
+  geometry: Record<string, unknown>;
 }
 
 export interface WorldGeoJson {

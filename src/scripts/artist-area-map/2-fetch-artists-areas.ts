@@ -47,9 +47,7 @@ function transform(musicbrainzArtistList: MusicbrainzArtist[]): ArtistArea[] {
 function convert({name, area}: MusicbrainzArtist): ArtistArea {
   return {
     artist: name,
-    area: area
-      ? area.name
-      : null,
+    area: area.name,
   };
 }
 

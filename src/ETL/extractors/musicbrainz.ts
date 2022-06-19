@@ -35,8 +35,8 @@ export function fetchArtist(
     return axios.get(url, {headers});
   }
 
-  function retrieveMusicbrainzArtistCache(): Promise<Artist> {
-    return retrieveResponseDataCache<Artist>(url, config.connectors.musicbrainz.cache);
+  function retrieveMusicbrainzArtistCache(): Promise<Artist | null> {
+    return retrieveResponseDataCache<Artist | null>(url, config.connectors.musicbrainz.cache);
   }
 
   function storeMusicbrainzArtistCache(response: ArtistResponse): Promise<ArtistResponse> {
@@ -58,7 +58,7 @@ export function fetchArtist(
         return artistCache;
       }
 
-      return delay(requestMusicbrainzArtist, config.connectors.musicbrainz.api.requestFrequency)
+      return delay(requestMusicbrainzArtist, config.connectors.musicbrainz.api.requestFrequency as number)
         .then(storeMusicbrainzArtistCache)
         .then((response) => response.data);
     });

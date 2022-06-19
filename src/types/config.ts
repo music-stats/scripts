@@ -44,8 +44,11 @@ export interface Correction {
 }
 
 interface Script {
-  inputFilePath?: string;
   outputFilePath: string;
+}
+
+interface ScriptWithInputFile extends Script {
+  inputFilePath: string;
 }
 
 interface MergeArtistsScript extends Script {
@@ -66,7 +69,7 @@ interface Dataset {
   filePath: string;
 }
 
-export default interface Config {
+interface Config {
   userAgent: string;
 
   connectors: {
@@ -76,7 +79,7 @@ export default interface Config {
 
   scripts: {
     artistAreaMap: {
-      trimWorldMap: Script;
+      trimWorldMap: ScriptWithInputFile;
       fetchArtist: Script;
       fetchArtistsAreas: Script;
       mergeArtists: MergeArtistsScript;
@@ -85,7 +88,7 @@ export default interface Config {
     scrobbleTimeline: {
       fetchScrobbles: FetchScrobblesScript;
       mergeScrobbles: Script;
-      groupArtistsByGenres: Script;
+      groupArtistsByGenres: ScriptWithInputFile;
     };
   };
 
@@ -93,3 +96,5 @@ export default interface Config {
     countryCodes: Dataset;
   };
 }
+
+export default Config;

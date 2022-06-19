@@ -11,8 +11,8 @@ function extract(): Promise<TxtMultilineFolderContent> {
 
 function transform(artistListByFilename: TxtMultilineFolderContent): ArtistListByGenre {
   const artistListByGenre: ArtistListByGenre = {};
-  const upperCaseFirstLetter = (value: string) => value.charAt(0).toUpperCase() + value.slice(1);
-  const filenameToGenre = (filename: string) => filename.split('--').map(upperCaseFirstLetter).join(' ');
+  const upperCaseFirstLetter = (value: string): string => value.charAt(0).toUpperCase() + value.slice(1);
+  const filenameToGenre = (filename: string): string => filename.split('--').map(upperCaseFirstLetter).join(' ');
 
   for (const filename in artistListByFilename) {
     const artistList = artistListByFilename[filename].filter((artist) => artist.length);

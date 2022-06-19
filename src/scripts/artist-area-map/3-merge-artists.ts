@@ -36,7 +36,7 @@ function transform({artistList, artistAreaList}: InputLists): Promise<PackedArti
 
 function load(mergedArtistList: PackedArtist[]): Promise<PackedArtist[]> {
   const {outputFilePath} = config.scripts.artistAreaMap.mergeArtists;
-  const splitArrayStringByLines = (value: string) => value.replace(/\],\[/g, '],\n[');
+  const splitArrayStringByLines = (value: string): string => value.replace(/\],\[/g, '],\n[');
 
   log();
   log(`writing to "${outputFilePath}"`);

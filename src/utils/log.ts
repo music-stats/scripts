@@ -1,15 +1,15 @@
-import * as colors from 'colors/safe';
+import chalk from 'chalk';
 
 function log(...messages: string[]): void {
-  return console.log(...messages.map((m) => colors.grey(trimNewlineSpaces(m))));
+  return console.log(...messages.map((m) => chalk.grey(trimNewlineSpaces(m))));
 }
 
 export function warn(...messages: string[]): void {
-  return console.warn(...messages.map((m) => colors.yellow(trimNewlineSpaces(m))));
+  return console.warn(...messages.map((m) => chalk.yellow(trimNewlineSpaces(m))));
 }
 
 export function logRequest(url: string): void {
-  return console.log(`requesting ${colors.cyan(url)}`);
+  return console.log(`requesting ${chalk.cyan(url)}`);
 }
 
 export function proxyLog<DataType>(data: DataType): DataType {

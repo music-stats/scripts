@@ -39,14 +39,14 @@ describe('date utils', () => {
   describe('methods dealing with current date', () => {
     const RealDate = global.Date;
 
-    function setToday(dateString: string) {
-      (global.Date as any) = class extends RealDate {
-        public static now() {
-          return new Date(dateString).getTime();
-        }
-
+    function setToday(dateString: string): void {
+      (global.Date as unknown) = class extends RealDate {
         constructor() {
           super(dateString);
+        }
+
+        public static now(): number {
+          return new Date(dateString).getTime();
         }
       };
     }
@@ -94,8 +94,8 @@ describe('date utils', () => {
       expect(dateToUtcUts(new Date('2008'))).toBe(1199145600);
       expect(dateToUtcUts(new Date('2010-02'))).toBe(1264982400);
       expect(dateToUtcUts(new Date('1950-03-12'))).toBe(-625104000);
-      expect(dateToUtcUts(new Date('2019-08-06 21:21'))).toBe(1565115660);
-      expect(dateToUtcUts(new Date('2019-07-06 05:05'))).toBe(1562378700);
+      expect(dateToUtcUts(new Date('2019-08-06 21:21'))).toBe(1565119260);
+      expect(dateToUtcUts(new Date('2019-07-06 05:05'))).toBe(1562382300);
       expect(dateToUtcUts(new Date('2049-09-02'))).toBe(2514153600);
     });
   });
@@ -111,15 +111,15 @@ describe('date utils', () => {
 
   describe('dateToStartDayDate()', () => {
     test('adds 23:59:59 (UTC) to a given date', () => {
-      expect(dateToStartDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-11T21:00:00.000Z');
-      expect(dateToStartDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-13T21:00:00.000Z');
+      expect(dateToStartDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-11T22:00:00.000Z');
+      expect(dateToStartDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-13T22:00:00.000Z');
     });
   });
 
   describe('dateToEndDayDate()', () => {
     test('adds 23:59:59 (UTC) to a given date', () => {
-      expect(dateToEndDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-12T20:59:59.000Z');
-      expect(dateToEndDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-14T20:59:59.000Z');
+      expect(dateToEndDayDate(new Date('2019-09-12')).toISOString()).toBe('2019-09-12T21:59:59.000Z');
+      expect(dateToEndDayDate(new Date('2019-09-14 20:00')).toISOString()).toBe('2019-09-14T21:59:59.000Z');
     });
   });
 });

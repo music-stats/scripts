@@ -3,7 +3,7 @@ import {Scrobble, ScrobbleList} from 'src/types/scrobble';
 export default function merge(scrobbleListList: ScrobbleList[]): ScrobbleList {
   const registry: {[key: string]: true} = {};
   const result: ScrobbleList = [];
-  const insertOrSkip = (scrobble: Scrobble) => {
+  const insertOrSkip = (scrobble: Scrobble): void => {
     const {date, artist, track} = scrobble;
     const key = `${date} - ${artist.name} - ${track.name}`;
 

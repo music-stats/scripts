@@ -24,12 +24,12 @@ import {aggregatePlaycounts} from 'src/ETL/transformers/aggregate';
 const argv = process.argv.slice(2);
 
 if (argv[0] && !isFlagArg(argv[0]) && !isDateStringValid(argv[0])) {
-  console.error(`The "from" argument must have the "YYYY-MM-DD" format. Received "${argv[0]}".`)
+  console.error(`The "from" argument must have the "YYYY-MM-DD" format. Received "${argv[0]}".`);
   process.exit(1);
 }
 
 if (argv[1] && !isFlagArg(argv[1]) && !isDateStringValid(argv[1])) {
-  console.error(`The "to" argument must have the "YYYY-MM-DD" format. Received "${argv[1]}".`)
+  console.error(`The "to" argument must have the "YYYY-MM-DD" format. Received "${argv[1]}".`);
   process.exit(1);
 }
 
@@ -75,15 +75,15 @@ function convert({name, date, album, artist}: LastfmRecentTrack): Scrobble {
     date: utcUtsToDateTimeString(parseInt(date.uts, 10)),
     track: {
       name,
-      playcount: null,
+      playcount: 0,
     },
     album: {
       name: album['#text'],
-      playcount: null,
+      playcount: 0,
     },
     artist: {
       name: artist['#text'],
-      playcount: null,
+      playcount: 0,
     },
   };
 }
