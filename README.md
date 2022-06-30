@@ -7,13 +7,14 @@ SHOULD become an API gateway between different front-ends and various data provi
 
 ## Tech stack
 dev deps:
-[`typescript`](https://www.typescriptlang.org/docs),
-[`jest`](https://jestjs.io/docs/en/expect).
+[`typescript`](https://www.typescriptlang.org/docs/),
+[`jest`](https://jestjs.io/docs/expect/).
 
 deps:
-[`node`](https://nodejs.org/dist/latest/docs/api) (at least v10, since experimental [`fs.promises` API](https://nodejs.org/dist/latest/docs/api/fs.html#fs_fs_promises_api) is used),
-[`ramda`](http://ramdajs.com/docs),
-[`axios`](https://github.com/axios/axios).
+[`node`](https://nodejs.org/api/),
+[`ramda`](http://ramdajs.com/docs/),
+[`axios`](https://github.com/axios/axios/),
+[`chalk`](https://github.com/chalk/chalk/) ([`v4.1.2`](https://github.com/chalk/chalk/releases/tag/v4.1.2) is used instead of [`v5.0.0`](https://github.com/chalk/chalk/releases/tag/v5.0.0) due to ESM, see [this guide](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-make-my-typescript-project-output-esm) to migrate).
 
 deps to consider for the server-side application:
 [`koa`](http://koajs.com/#application).
@@ -48,7 +49,7 @@ Create a `.env` file and fill its values according to [`.env.template`](.env.tem
 
 ### Commands
 ```bash
-$ npm i                # install deps
+$ npm ci               # install deps
 $ npm run lint         # lint scripts
 $ npm test             # run unit tests
 $ npm run build        # compile TypeScript
