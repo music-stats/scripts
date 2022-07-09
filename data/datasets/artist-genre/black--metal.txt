@@ -1,7 +1,9 @@
 1914
 Abbath
+Abigail
 Agruss
 Alverg
+Balfor
 Bathory
 Bríi
 Carpathian Forest
@@ -10,6 +12,7 @@ Downfall of nur
 Drudkh
 Dzö-nga
 Emperor
+Felvum
 Furia
 Grylle
 Hades Almighty

@@ -16,6 +16,7 @@ Dödsrit
 Enslaved
 Falloch
 Fen
+Hæresis
 Hail Spirit Noir
 Harakiri for the Sky
 Heretoir
@@ -36,6 +37,7 @@ Oranssi Pazuzu
 Pušča
 Regarde Les Hommes Tomber
 Sadness
+Sigh
 Solefald
 Sólstafir
 Sylvaine
@@ -43,4 +45,5 @@ The Black Sea
 The Clearing Path
 Thy Catafalque
 White Ward
+Zeal & Ardor
 Zorya

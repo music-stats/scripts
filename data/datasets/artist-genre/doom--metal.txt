@@ -6,6 +6,7 @@ Brume
 Doom:VS
 Draconian
 Earth
+Enchantment
 Forest of Shadows
 Godthrymm
 Green Carnation
@@ -18,6 +19,7 @@ Mournful Gust
 My Dying Bride
 Novembers Doom
 Novembre
+Odradek Room
 Pallbearer
 Paradise Lost
 Red Moon Architect
@@ -33,6 +35,7 @@ SubRosa
 Sunnata
 Swallow the Sun
 The Old Dead Tree
+Vin de Mia Trix
 Windhand
 Woods of Ypres
 Year of the Cobra

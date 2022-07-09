@@ -12,7 +12,6 @@ Body Surfer
 Bon Iver
 Bonnie 'Prince' Billy
 Camila Moreno
-Cassandra Jenkins
 Daughter
 Dave Thomas Junior
 Denison Witmer
@@ -45,6 +44,7 @@ Regina Spektor
 Rick Springfield
 Ryley Walker
 Serge Gainsbourg
+SkladNo
 Steve Dawson
 Stevie Nicks
 Tom Waits

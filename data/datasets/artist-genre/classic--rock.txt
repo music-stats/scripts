@@ -1,6 +1,7 @@
 AC/DC
 Aerosmith
 Alice Cooper
+Black Oak Arkansas
 Black Sabbath
 Blue Öyster Cult
 Boston
@@ -11,6 +12,7 @@ Coverdale/Page
 Cozy Powell
 Creedence Clearwater Revival
 Cry Of Love
+D-A-D
 David Lee Roth
 Deep Purple
 Def Leppard
@@ -37,6 +39,7 @@ Kadavar
 Kingdom Come
 Kiss
 Led Zeppelin
+Lynyrd Skynyrd
 Mark Knopfler
 Mesmerized
 Neil Young
@@ -68,5 +71,7 @@ The Who
 The Winery Dogs
 Thin Lizzy
 Uli Jon Roth
+Velvet Revolver
 Whitesnake
 Wings
+ZZ Top

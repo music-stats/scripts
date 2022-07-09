@@ -9,6 +9,7 @@ Art-In
 Atoms for Peace
 Baths
 Björk
+Bonobo
 Brian Eno
 Burial
 Cape Cod
@@ -35,6 +36,8 @@ Jojo Mayer
 Jojo Mayer & Nerve
 Jon Hopkins
 Jonny Greenwood
+Julia Bondar
+Karoon
 Katarina Gryvul
 Kayzo
 Knob
@@ -65,6 +68,7 @@ Son Lux
 Squarepusher
 Starless
 The Blaze
+The Golden Filter
 The Moth & the Flame
 The Prodigy
 Thom Yorke
@@ -73,6 +77,7 @@ Tristan De Liege
 Twin Shadow
 Ultravox
 Vök
+Westbam/ML
 Weval
 Whethan
 Yello
@@ -81,3 +86,4 @@ Zavoloka
 Zbaraski
 Вагоновожатые
 Катя Chilly
+Туча

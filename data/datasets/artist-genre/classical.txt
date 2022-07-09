@@ -1,7 +1,7 @@
 Alain Planes
 Andrea Bocelli
-Antonio Vivaldi
 Antonín Dvořák
+Antonio Vivaldi
 Arthur Rubinstein
 Bernard Herrmann
 Boris Mikolayovich Lyatoshinsky
@@ -25,9 +25,9 @@ Gioacchino Rossini
 Giuseppe Verdi
 Gustav Holst
 Hector Berlioz
+Hélène Grimaud
 Henryk Górecki
 Hugo Wolf
-Hélène Grimaud
 Johann Sebastian Bach
 Johannes Brahms
 Joshua Bell
@@ -52,6 +52,7 @@ Valentin Silvestrov
 Vladimir Ashkenazy
 Vladimir Horowitz
 Wolfgang Amadeus Mozart
+Yann Tiersen
 Александр Николаевич Скрябин
 Дмитрий Дмитриевич Шостакович
 Игорь Фёдорович Стравинский
