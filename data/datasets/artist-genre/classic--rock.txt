@@ -1,8 +1,10 @@
+10cc
 AC/DC
 Aerosmith
 Alice Cooper
 Black Oak Arkansas
 Black Sabbath
+Bloodrock
 Blue Öyster Cult
 Boston
 Bruce Springsteen
@@ -27,10 +29,12 @@ Fleetwood Mac
 Frank Zappa
 Freddie Mercury
 George Harrison
+Gillan
 Glenn Hughes
 Guns N' Roses
 Hällas
 Hawkwind
+Ian Gillan
 Izzy Stradlin
 Jimi Hendrix
 Jon Lord
@@ -51,6 +55,8 @@ Pink Floyd
 Quayde LaHüe
 Queen
 Rainbow
+Robin Trower
+Sad Café
 Scorpions
 Simon & Garfunkel
 Slade
@@ -62,6 +68,7 @@ The Allman Brothers Band
 The Allman Joys
 The Animals
 The Beatles
+The Cult
 The Doors
 The Electric Prunes
 The Hour Glass
@@ -70,6 +77,8 @@ The Second Coming
 The Who
 The Winery Dogs
 Thin Lizzy
+Tony Iommi
+Trapeze
 Uli Jon Roth
 Velvet Revolver
 Whitesnake
