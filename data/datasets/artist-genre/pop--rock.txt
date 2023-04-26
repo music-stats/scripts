@@ -13,6 +13,7 @@ Kleinod
 Lama
 Lenny Kravitz
 NizKiz
+Paramore
 Piano
 Roxette
 Sasha Chemerov
@@ -32,6 +33,7 @@ Yurcash
 Мотор'ролла
 Н.Три
 Океан Ельзи
+Олександр Положинський
 Пикник
 Плач Єремії
 Саша Чемеров
@@ -39,4 +41,3 @@ Yurcash
 Скрябін
 Тарас Чубай
 Фіолет
-Христина Соловій

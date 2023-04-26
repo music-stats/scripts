@@ -8,6 +8,7 @@ Arcade Fire
 Arctic Monkeys
 Balthazar
 Big Thief
+Black Pistol Fire
 Black Rebel Motorcycle Club
 Blonde Redhead
 Bombay Bicycle Club
@@ -79,6 +80,8 @@ The National
 The Neighbourhood
 The Receiving End of Sirens
 The Smile
+The Tubs
+The WAEVE
 The War on Drugs
 Tijuana Panthers
 Tik Tu
@@ -104,3 +107,4 @@ Zfeelz
 паліндром
 Стас Корольов
 Ті, Що Падають Вгору
+ЦиферБлат
