@@ -1,10 +1,8 @@
-
 2equals2
 5 vymir
 8LIS5
 8x8
 alt-J
-American Football
 Arcade Fire
 Arctic Monkeys
 Balthazar
@@ -36,7 +34,7 @@ Ilona Mahieu
 Interpol
 Joshua and the Ruins
 Kakkmaddafakka
-Kiteflighter
+Kraftklub
 Latexfauna
 Lo Moon
 Local Natives
@@ -44,7 +42,6 @@ Lucy Dacus
 Manchester Orchestra
 MASS OF THE FERMENTING DREGS
 Midlake
-Mineral
 Mitski
 Motorpsycho
 NAILERY
@@ -65,9 +62,9 @@ Saint Motel
 Seahaven
 Sheetel
 Silversun Pickups
+Sir Chloe
 Slow Mass
 Snail Mail
-Sunny Day Real Estate
 Tame Impala
 Tanukichan
 Team Sleep
@@ -81,12 +78,10 @@ The Frames
 The Killers
 The National
 The Neighbourhood
-The Receiving End of Sirens
 The Smile
 The Tubs
 The WAEVE
 The War on Drugs
-The Year End
 Tijuana Panthers
 Tik Tu
 Titus Andronicus
@@ -108,7 +103,6 @@ Zfeelz
 Гапочка
 Легендарные Пластилиновые Ноги
 Оркестр Че
-паліндром
 Стас Корольов
 Ті, Що Падають Вгору
 ЦиферБлат
