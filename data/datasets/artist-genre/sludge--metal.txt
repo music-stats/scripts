@@ -36,6 +36,7 @@ Obscure Sphinx
 octopus kraft
 Pelican
 Pijn
+Psychonaut
 Rosetta
 Rwake
 Soom

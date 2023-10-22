@@ -6,6 +6,7 @@ Belle and Sebastian
 Ben Howard
 Between Friends
 Boy
+boygenius
 Calicoco
 Carla Morrison
 Cassandra Jenkins
@@ -38,6 +39,7 @@ Marika Hackman
 Mariko Goto
 Meg Myers
 Michael Lessard
+NAZVA
 New Young Pony Club
 Palina
 panivalkova
@@ -64,4 +66,3 @@ Yeyo.
 Тільки Світло
 Тонка
 Христина Халімонова
-boygenius
