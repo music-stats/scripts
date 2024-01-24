@@ -1,6 +1,7 @@
 Agnostic Front
 Amok
 Break The Habit
+Capra
 Cloud Rat
 Criminal Instinct
 Friendship
@@ -10,6 +11,8 @@ Integrity
 Malevolence
 Mauser
 Mordox
+Night witch
+Pulse
 Raw Grip
 Sick of It All
 Smile, Chaos!
