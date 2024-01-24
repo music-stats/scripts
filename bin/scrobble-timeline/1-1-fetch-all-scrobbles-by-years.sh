@@ -9,4 +9,5 @@ npm run script:scrobble-timeline:1-fetch-scrobbles 2019-01-01 2019-12-31
 npm run script:scrobble-timeline:1-fetch-scrobbles 2020-01-01 2020-12-31
 npm run script:scrobble-timeline:1-fetch-scrobbles 2021-01-01 2021-12-31
 npm run script:scrobble-timeline:1-fetch-scrobbles 2022-01-01 2022-12-31
-npm run script:scrobble-timeline:1-fetch-scrobbles 2023-01-01
+npm run script:scrobble-timeline:1-fetch-scrobbles 2023-01-01 2023-12-31
+npm run script:scrobble-timeline:1-fetch-scrobbles 2024-01-01

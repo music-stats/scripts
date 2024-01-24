@@ -9,6 +9,7 @@ cp ./output/scrobble-timeline/1-scrobbles/2019-01-01--2019-12-31.json ../timelin
 cp ./output/scrobble-timeline/1-scrobbles/2020-01-01--2020-12-31.json ../timeline/data/years/2020.json
 cp ./output/scrobble-timeline/1-scrobbles/2021-01-01--2021-12-31.json ../timeline/data/years/2021.json
 cp ./output/scrobble-timeline/1-scrobbles/2022-01-01--2022-12-31.json ../timeline/data/years/2022.json
-cp ./output/scrobble-timeline/1-scrobbles/2023-01-01--2023-*.json ../timeline/data/years/2023.json
+cp ./output/scrobble-timeline/1-scrobbles/2023-01-01--2023-12-31.json ../timeline/data/years/2023.json
+cp ./output/scrobble-timeline/1-scrobbles/2024-01-01--2024-*.json ../timeline/data/years/2024.json
 cp ./output/scrobble-timeline/2-merged-scrobbles.json ../timeline/data/years/all.json
 cp ./output/scrobble-timeline/3-artists-by-genres.json ../timeline/data/artists-by-genres.json
