@@ -1,6 +1,7 @@
 Acid Drinkers
 Annihilator
 Anthrax
+Coroner
 Holy Moses
 Kreator
 Megadeth
@@ -10,6 +11,7 @@ Nevermore
 Newsted
 Power Trip
 Sepultura
+Slayer
 Testament
 Vektor
 Vulture
