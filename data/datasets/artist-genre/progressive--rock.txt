@@ -24,6 +24,7 @@ Caravan
 Chroma Key
 Citizen Cain
 Collage
+Colour
 Cosmosquad
 Day without Dawn
 Discipline.
@@ -52,6 +53,7 @@ King Crimson
 King Gizzard & The Lizard Wizard
 Kyros
 La Horsa Bianca
+Light and Shade
 Locanda delle Fate
 Lunatic Soul
 Mahavishnu Orchestra
@@ -90,6 +92,7 @@ Seven Impale
 Shadowland
 Sherpa The Tiger
 Siddharta
+Solar Blooms
 Spaced Out
 Stars & Mellow
 Steven Wilson
@@ -103,6 +106,7 @@ The Mars Volta
 The Pineapple Thief
 Thomas Giles
 Transatlantic
+TTNG
 U.K.
 Umphrey's McGee
 Van der Graaf Generator
@@ -112,4 +116,5 @@ White Willow
 Wolverine
 Yang
 Yes
+Ефір
 Обійми Дощу
