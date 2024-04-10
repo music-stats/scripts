@@ -1,6 +1,7 @@
 Baest
 Behemoth
 Belphegor
+Benediction
 Blood Incantation
 Bolt Thrower
 Carcass
@@ -20,5 +21,4 @@ Obrij
 Pyrrhon
 SCHIZOGEN
 Sisyphean
-Tribulation
 Umbra Vitae
